@@ -1,0 +1,278 @@
+[33mcommit 47bcac3f8a58c7cfceb36af88729d6e5027c9413[m[33m ([m[1;36mHEAD -> [m[1;32mmaster[m[33m, [m[1;31morigin/master[m[33m, [m[1;31morigin/HEAD[m[33m)[m
+Author: ishanRox <roxishan8@gmail.com>
+Date:   Fri Mar 6 21:27:50 2020 +0530
+
+    title changes
+
+[33mcommit 40690440bdf664d8b90d1ff7cefa4a8e88c41b2a[m
+Author: ishanRox <roxishan8@gmail.com>
+Date:   Fri Mar 6 20:26:05 2020 +0530
+
+    added_project1
+
+[33mcommit 0d3224125ee1dcc61e0f77d5b4b1cbb516017c2e[m
+Author: ishanRox <roxishan8@gmail.com>
+Date:   Fri Mar 6 20:15:37 2020 +0530
+
+    addedAnglar
+
+[33mcommit 3ae2c6c87f61424dcca78812b0c939acaa6d20cd[m
+Author: Drone <37543774+ishanRox@users.noreply.github.com>
+Date:   Mon Mar 2 02:38:48 2020 +0530
+
+    mysql oauth
+
+[33mcommit 2e697faf098d83409995f23f321c5ecad679c1b4[m
+Author: Drone <37543774+ishanRox@users.noreply.github.com>
+Date:   Sun Mar 1 13:07:07 2020 +0530
+
+    Inmemory auth server
+
+[33mcommit b639263c55c37951618101e02ad95c7dbd151693[m
+Author: Drone <37543774+ishanRox@users.noreply.github.com>
+Date:   Fri Feb 28 06:03:44 2020 +0530
+
+    auth
+
+[33mcommit 9a881fb76ff94bb6b3d08a2fa2ccc111725c24d4[m
+Author: Drone <37543774+ishanRox@users.noreply.github.com>
+Date:   Thu Feb 27 06:23:57 2020 +0530
+
+    new
+
+[33mcommit 780c5ba6dfbf30cb27072989a63306ceaa557b96[m
+Author: Drone <37543774+ishanRox@users.noreply.github.com>
+Date:   Thu Feb 27 06:22:27 2020 +0530
+
+    a
+
+[33mcommit d39e8b4f67957184036eebb854224488880d55c9[m
+Author: Drone <37543774+ishanRox@users.noreply.github.com>
+Date:   Thu Feb 27 03:47:58 2020 +0530
+
+    local stored server config project
+
+[33mcommit a42fbc9aa21b83b0bb3ac756ebd8f82f2c6844e0[m
+Author: Drone <37543774+ishanRox@users.noreply.github.com>
+Date:   Wed Feb 26 02:03:56 2020 +0530
+
+    Few addditional things
+
+[33mcommit 4c25f797601a968ca597e75602cd52f5bf69e526[m
+Author: Drone <37543774+ishanRox@users.noreply.github.com>
+Date:   Tue Feb 25 05:15:04 2020 +0530
+
+    presentation
+
+[33mcommit 1235f4a483aeab31d560f61dc0b9de9f130a65e0[m
+Author: Drone <37543774+ishanRox@users.noreply.github.com>
+Date:   Tue Feb 25 05:04:40 2020 +0530
+
+    HTTPS NO SOCKET SERVER
+
+[33mcommit cc64c95fd9f1db6a48c40a853b5a628cc5df3a91[m
+Author: Drone <37543774+ishanRox@users.noreply.github.com>
+Date:   Mon Feb 24 23:33:40 2020 +0530
+
+    SSL HTTPS SERVER
+
+[33mcommit 9465ab58e3d06093ea59f3f539d5f83550b76d0f[m
+Author: Drone <37543774+ishanRox@users.noreply.github.com>
+Date:   Mon Feb 24 02:45:20 2020 +0530
+
+    nice regex and complete one
+
+[33mcommit 7f68b79a964be6c8e7c1ac841682387a21180a55[m
+Author: Drone <37543774+ishanRox@users.noreply.github.com>
+Date:   Sun Feb 23 22:44:59 2020 +0530
+
+    Client SErver
+
+[33mcommit 4f127b8595728e1cd3fade970689cfac106dfe4c[m
+Merge: 662890b b9abd49
+Author: Drone <37543774+ishanRox@users.noreply.github.com>
+Date:   Fri Feb 21 05:49:30 2020 +0530
+
+    Merge branch 'master' of https://github.com/ishanRox/Virtusa-Training
+
+[33mcommit 662890b38064a8680bb66c8a1e5e807cc812d03f[m
+Author: Drone <37543774+ishanRox@users.noreply.github.com>
+Date:   Fri Feb 21 05:49:13 2020 +0530
+
+    ServerSocket Basic
+
+[33mcommit b9abd4919f6b0160674b89d94c75f75058036db6[m
+Author: ishanRox <roxishan8@gmail.com>
+Date:   Tue Feb 18 02:17:49 2020 +0530
+
+    add the steps
+
+[33mcommit 07a2ae9d4021c570e20b3b94f993f9e89b1f01ef[m
+Author: Drone <37543774+ishanRox@users.noreply.github.com>
+Date:   Sun Feb 16 15:48:49 2020 +0530
+
+    CircuitBreaker
+
+[33mcommit 5752a43e6b6c490f5d376ea44ed57793fb3f76a4[m
+Author: Drone <37543774+ishanRox@users.noreply.github.com>
+Date:   Sun Feb 16 11:38:46 2020 +0530
+
+    Allocation extra field removed
+
+[33mcommit 551826380864dc79405b45f87a3786fed345477d[m
+Author: Drone <37543774+ishanRox@users.noreply.github.com>
+Date:   Sun Feb 16 10:44:38 2020 +0530
+
+    Eureka load Balancer
+
+[33mcommit 9fe59f011c795ab155a84eac3b925256f218e73c[m
+Author: ishanRox <roxishan8@gmail.com>
+Date:   Fri Feb 14 02:51:32 2020 +0530
+
+    2services:
+
+[33mcommit 99700b6cf7bd45b761351f2560be3ce7590cad95[m
+Author: ishanRox <roxishan8@gmail.com>
+Date:   Fri Feb 14 00:18:44 2020 +0530
+
+    Docker assignment
+
+[33mcommit 0a411aa4b850796bc4770dc672b95545a5ccca69[m
+Author: Drone <37543774+ishanRox@users.noreply.github.com>
+Date:   Wed Feb 12 02:21:13 2020 +0530
+
+    JPA METHODS
+    
+    Declare query methods on the interface.
+
+[33mcommit 423a0de3f847c440ae66c44a2ee14cdcbf8d2523[m
+Author: Drone <37543774+ishanRox@users.noreply.github.com>
+Date:   Wed Feb 12 01:01:29 2020 +0530
+
+    2Services
+    
+    services call to each other
+
+[33mcommit 9e98a733060f0a2aa2b9ecf40a745300f5432090[m
+Author: Drone <37543774+ishanRox@users.noreply.github.com>
+Date:   Tue Feb 11 05:52:39 2020 +0530
+
+    solved by @LazyCollection
+    
+    EXTRA = .size() and .contains() won't initialize the whole collection
+    
+    TRUE = initialize the whole collection on first access
+    
+    FALSE = Eager-Loading
+
+[33mcommit de487382309f1e51586957adca23975271fe9aaf[m
+Author: Drone <37543774+ishanRox@users.noreply.github.com>
+Date:   Tue Feb 11 05:36:14 2020 +0530
+
+    Using set solved
+
+[33mcommit 6d76fa6a78209d1a8a50d3607dd44011e637006d[m
+Author: Drone <37543774+ishanRox@users.noreply.github.com>
+Date:   Tue Feb 11 00:45:08 2020 +0530
+
+    M T M
+    
+    many to many using list
+
+[33mcommit ba49d32bebc6caaa857625792c9dd47f4657161d[m
+Author: Drone <37543774+ishanRox@users.noreply.github.com>
+Date:   Mon Feb 10 23:03:25 2020 +0530
+
+    one to many  null problem solved
+    
+     employee id in telephone; table being null solved
+
+[33mcommit 15d4f43026af18082757f7da9f2b337c67765f23[m
+Author: Drone <37543774+ishanRox@users.noreply.github.com>
+Date:   Mon Feb 10 02:44:50 2020 +0530
+
+    Added tp more features and comments
+
+[33mcommit c6206a7f91b7be2c90582c730dd90704d8050508[m
+Author: Drone <37543774+ishanRox@users.noreply.github.com>
+Date:   Mon Feb 10 02:01:26 2020 +0530
+
+    one to many many to many
+
+[33mcommit c755228c0f4788b352f0e1671e20a9a795effca1[m
+Author: Drone <37543774+ishanRox@users.noreply.github.com>
+Date:   Sun Feb 9 22:21:41 2020 +0530
+
+    OneToOne relationship
+    
+    With cascade employee and adress one to one relationship
+
+[33mcommit 404850720495a3d16d05d33eb976428a997b8fa1[m
+Author: Drone <37543774+ishanRox@users.noreply.github.com>
+Date:   Sun Feb 9 21:02:23 2020 +0530
+
+    SaveAndFind
+    
+    Using JpaRepository Methods
+
+[33mcommit 7af612855d7fd75e340f868047ae1f7229adf061[m
+Author: Drone <37543774+ishanRox@users.noreply.github.com>
+Date:   Sun Feb 9 15:42:18 2020 +0530
+
+    database save
+
+[33mcommit d94eae68e051dbbf50143ce04be05ecb32fd0d74[m
+Author: Drone <37543774+ishanRox@users.noreply.github.com>
+Date:   Thu Feb 6 23:59:45 2020 +0530
+
+    Day 1 basics
+
+[33mcommit 59e9cf8b906927e79bd70c62f4665517d9b73f04[m
+Author: Drone <37543774+ishanRox@users.noreply.github.com>
+Date:   Mon Feb 3 03:36:16 2020 +0530
+
+    Property File Example
+
+[33mcommit af972e2ff9dc02972699d48f1188a537ca1ff818[m
+Author: Drone <37543774+ishanRox@users.noreply.github.com>
+Date:   Mon Feb 3 03:17:39 2020 +0530
+
+    java Configuration
+
+[33mcommit 9425111592e5cfa1021ae60c0d0f7950f4dfd1fb[m
+Author: Drone <37543774+ishanRox@users.noreply.github.com>
+Date:   Sun Feb 2 07:07:38 2020 +0530
+
+    Add Comments and new Java project
+
+[33mcommit f76b6cf363835dad3752bb90d08cf54ad00a6b70[m
+Author: Drone <37543774+ishanRox@users.noreply.github.com>
+Date:   Fri Jan 31 06:07:27 2020 +0530
+
+    All
+
+[33mcommit c5ad29826e120409e7f2be9499dccdc97de45db4[m
+Author: Drone <37543774+ishanRox@users.noreply.github.com>
+Date:   Wed Jan 29 03:27:03 2020 +0530
+
+    Spring
+
+[33mcommit 498ee89eedd65cb74915f15b04c7bb8a8488c61c[m
+Author: Drone <37543774+ishanRox@users.noreply.github.com>
+Date:   Tue Jan 21 01:03:41 2020 +0530
+
+    streams class
+
+[33mcommit dc247c69419298208f634652cd2f313a3cc1add5[m
+Author: Drone <37543774+ishanRox@users.noreply.github.com>
+Date:   Tue Jan 21 01:03:03 2020 +0530
+
+    No extra classes for lambdas
+
+[33mcommit 991bd4615c268b9048865ebc8299fe7fcfab3764[m
+Author: Drone <37543774+ishanRox@users.noreply.github.com>
+Date:   Tue Jan 21 01:01:37 2020 +0530
+
+    java Streams + comparable Comparator
+
+[33mcommit 2bd4428
