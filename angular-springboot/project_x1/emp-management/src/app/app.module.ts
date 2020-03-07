@@ -5,12 +5,13 @@ import { HttpClientModule } from "@angular/common/http";
 import { AppRoutingModule } from "./app-routing.module";
 import { AppComponent } from "./app.component";
 import { EmployeeComponent } from "./employee/employee.component";
+import { AddEmployeeComponent } from './add-employee/add-employee.component';
 
 // What is the purpose of the app.module.ts?
 //     It is to startup your application, and set the links to your other modules.
 
 @NgModule({
-  declarations: [AppComponent, EmployeeComponent],
+  declarations: [AppComponent, EmployeeComponent, AddEmployeeComponent],
   imports: [BrowserModule, AppRoutingModule, HttpClientModule],
   providers: [],
   bootstrap: [AppComponent]
