@@ -1,0 +1,7 @@
+table,
+th,
+td {
+  border-collapse: collapse;
+  color: rebeccapurple;
+  border: 1px solid black;
+}
