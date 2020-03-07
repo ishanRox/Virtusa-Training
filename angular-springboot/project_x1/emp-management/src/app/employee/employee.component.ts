@@ -24,6 +24,7 @@ export class EmployeeComponent implements OnInit {
     this.employees = response;
   }
 
+  //methanata call eka enne 
   //service ekata kiyanawa delete karana emp kenek id eken
   //EEE emp wa filter karala api list eka update karanawa
   deleteEmployee(employee: Employee): void {
