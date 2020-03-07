@@ -17,13 +17,21 @@ export class Employee {
 })
 export class HttpClientService {
   constructor(private httpClient: HttpClient) {
+  }
+
+  //create karapu httpclient instance eka aran eken request yawanawa 
+  //ena response eka ethanama format karanawa
+  getEmp() {
+    console.log("test call");
+    return this.httpClient.get<Employee[]>('http://localhost:8080/emp/emp');
 
   }
 
-  getEmp() {
-    console.log("test call");
+  public deleteEmp(employee) {
+    return this.httpClient.delete<Employee>("http://localhost:8080/emp" + "/" + employee.empId);
+  }
 
-    return this.httpClient.get<Employee[]>('http://localhost:8080/emp');
-
+  public createEmp(employee) {
+    return this.httpClient.post<Employee>("http://localhost:8080/emp", employee);
   }
 }
