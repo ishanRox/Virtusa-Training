@@ -64,7 +64,14 @@ export class HttpClientService {
   public deleteQ(quection: Quection) {
     //const headers = new HttpHeaders({ Authorization: 'Basic ' + btoa(this.username + ':' + this.password) });
 
-    return this.httpClient.delete<Quection>("http://localhost:8080/emp/delete" + "/" + quection.id);
+    return this.httpClient.delete<Quection>("http://localhost:8080/emp/delete" + "/1" + quection.id);
+  }
+
+  public createQ(quection) {
+    // const headers = new HttpHeaders({ Authorization: 'Basic ' + btoa(this.username + ':' + this.password) });
+    console.log("create quection");
+
+    return this.httpClient.post<Quection>("http://localhost:8080/emp/save", quection);
   }
 
   getEmp() {
