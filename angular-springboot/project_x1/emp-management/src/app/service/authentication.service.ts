@@ -1,5 +1,4 @@
 import { Injectable } from '@angular/core';
-import { HttpClientService } from './http-client.service';
 import { HttpClient, HttpHeaders } from '@angular/common/http';
 import { map } from 'rxjs/operators';
 
@@ -10,23 +9,30 @@ export class User {
 
 }
 
+export class JwtResponse {
+  constructor(
+    public jwttoken: string,
+  ) { }
+
+}
+
 @Injectable({
   providedIn: 'root'
 })
 export class AuthenticationService {
+
   constructor(
     private httpClient: HttpClient
   ) {
   }
 
   authenticate(username, password) {
-    const headers = new HttpHeaders({ Authorization: 'Basic ' + btoa(username + ':' + password) });
-    return this.httpClient.get<User>('http://localhost:8080/emp/validate', { headers }).pipe(
+    return this.httpClient.post<any>('http://localhost:8080/authenticate', { username, password }).pipe(
       map(
         userData => {
           sessionStorage.setItem('username', username);
-          let authString = 'Basic ' + btoa(username + ':' + password);
-          sessionStorage.setItem('basicauth', authString);
+          let tokenStr = 'Bearer ' + userData.token;
+          sessionStorage.setItem('token', tokenStr);
           return userData;
         }
       )
@@ -34,9 +40,10 @@ export class AuthenticationService {
     );
   }
 
+
   isUserLoggedIn() {
     let user = sessionStorage.getItem('username')
-    console.log(!(user === null))
+    //console.log(!(user === null))
     return !(user === null)
   }
 
