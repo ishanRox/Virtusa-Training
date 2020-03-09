@@ -1,6 +1,7 @@
 package com.angular.ishan.controller;
 
 import com.angular.ishan.model.Employee;
+import com.angular.ishan.model.User;
 import org.springframework.web.bind.annotation.*;
 
 import java.util.ArrayList;
@@ -43,6 +44,12 @@ public class Controller {
     employees.add(employee2);
 
     return employees;
+  }
+
+  @GetMapping(produces = "application/json")
+  @RequestMapping({ "/validate" })
+  public User validateLogin() {
+    return new User("User successfully authenticated");
   }
 
   @RequestMapping(value = "emp", method = RequestMethod.GET, produces = "application/json")

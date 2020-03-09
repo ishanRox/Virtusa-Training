@@ -9,7 +9,7 @@ import { AuthenticationService } from '../service/authentication.service';
 })
 export class LoginComponent implements OnInit {
 
-  username = 'ishanrox'
+  username = ''
   password = ''
   invalidLogin = false
 
@@ -20,12 +20,17 @@ export class LoginComponent implements OnInit {
   }
 
   checkLogin() {
-    if (this.loginservice.authenticate(this.username, this.password)
-    ) {
-      this.router.navigate(['/emp'])
-      this.invalidLogin = false
-    } else
-      this.invalidLogin = true
-  }
+    (this.loginservice.authenticate(this.username, this.password).subscribe(
+      data => {
+        this.router.navigate(['/emp'])
+        this.invalidLogin = false
+      },
+      error => {
+        this.invalidLogin = true
 
+      }
+    )
+    );
+
+  }
 }
