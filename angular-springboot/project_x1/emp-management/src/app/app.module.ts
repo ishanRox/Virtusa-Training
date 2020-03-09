@@ -12,12 +12,14 @@ import { FooterComponent } from './footer/footer.component';
 import { LoginComponent } from './login/login.component';
 import { LogoutComponent } from './logout/logout.component';
 import { BasicAuthHtppInterceptorService } from './service/http-intercepter.service';
+import { QuectionComponent } from './quection/quection.component';
+import { AddQComponent } from './add-q/add-q.component';
 
 // What is the purpose of the app.module.ts?
 //     It is to startup your application, and set the links to your other modules.
 
 @NgModule({
-  declarations: [AppComponent, EmployeeComponent, AddEmployeeComponent, HeaderComponent, FooterComponent, LoginComponent, LogoutComponent],
+  declarations: [AppComponent, EmployeeComponent, AddEmployeeComponent, HeaderComponent, FooterComponent, LoginComponent, LogoutComponent, QuectionComponent, AddQComponent],
   imports: [BrowserModule
     , AppRoutingModule
     , HttpClientModule

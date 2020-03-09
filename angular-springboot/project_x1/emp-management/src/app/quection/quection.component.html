@@ -1,0 +1,52 @@
+<table class="table table-striped">
+  <tbody>
+    <div class="col-md-12">
+      <table class="table table-striped">
+        <thead>
+          <tr>
+            <th>id</th>
+            <th>subject</th>
+            <th>addedBy</th>
+            <th>addedDate</th>
+            <th>quectionString</th>
+            <th>difficulty</th>
+            <th>answers</th>
+            <th>topic</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr *ngFor="let quection of quections; let i = index">
+            <td>{{ quection.id }}</td>
+            <td>{{ quection.subject }}</td>
+            <td>{{ quection.addedBy }}</td>
+            <td>{{ quection.addedDate }}</td>
+            <td>{{ quection.quectionString }}</td>
+            <td>{{ quection.difficulty }}</td>
+            <td>
+              <table>
+                <tr *ngFor="let obj of quection.answers">
+                  {{
+                    obj | json
+                  }}
+                </tr>
+              </table>
+            </td>
+
+            <td>{{ quection.topic }}</td>
+            <td>
+              <button class="btn btn-danger" (click)="deleteQ(quection)">
+                Delete Quections
+              </button>
+            </td>
+
+            <td>
+              <button class="btn btn-info">
+                edit Quections
+              </button>
+            </td>
+          </tr>
+        </tbody>
+      </table>
+    </div>
+  </tbody>
+</table>

@@ -27,7 +27,9 @@ export class EmployeeComponent implements OnInit {
   //methanata call eka enne 
   //service ekata kiyanawa delete karana emp kenek id eken
   //EEE emp wa filter karala api list eka update karanawa
-  deleteEmployee(employee: Employee): void {
+  deleteE(employee: Employee): void {
+
+    console.log("delete E called");
     this.httpClientService.deleteEmp(employee)
       .subscribe(data => {
         console.log(data);
