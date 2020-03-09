@@ -1,24 +1,26 @@
 <header>
   <nav class="navbar navbar-expand-md navbar-dark bg-dark">
     <div>
-      <a href="https://www.ishanrox.com" class="navbar-brand">Simple Login</a>
+      <a href="https://www.ishanrox.com" class="navbar-brand"
+        >PractiseQ AdminPanel</a
+      >
     </div>
 
     <ul class="navbar-nav">
       <li>
         <a
           *ngIf="loginService.isUserLoggedIn()"
-          routerLink="/emp"
+          routerLink="/quections"
           class="nav-link"
-          >View Employees</a
+          >View Quections</a
         >
       </li>
       <li>
         <a
           *ngIf="loginService.isUserLoggedIn()"
-          routerLink="/addemp"
+          routerLink="/addq"
           class="nav-link"
-          >Add New Employee</a
+          >Add New Quections</a
         >
       </li>
       <li>
