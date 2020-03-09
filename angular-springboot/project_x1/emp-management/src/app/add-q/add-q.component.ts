@@ -1,5 +1,5 @@
 import { Component, OnInit } from '@angular/core';
-import { HttpClientService, Quection } from '../service/http-client.service';
+import { HttpClientService, Quection, Answer } from '../service/http-client.service';
 
 @Component({
   selector: 'app-add-q',
@@ -8,7 +8,22 @@ import { HttpClientService, Quection } from '../service/http-client.service';
 })
 export class AddQComponent implements OnInit {
   //template to send quections for spring endpoint
-  q: Quection = new Quection(1, "", "", "", "", 1, null, "");
+  ans: Answer[] = [
+    {
+
+      "answerString": "hello how are you"
+    },
+    {
+
+      "answerString": "hello how are you"
+    },
+    {
+
+      "answerString": "hello"
+    }
+  ];
+
+  q: Quection = new Quection(1, "", "", "", "", 1, this.ans, "");
   constructor(
     private httpClientService: HttpClientService
   ) { }
