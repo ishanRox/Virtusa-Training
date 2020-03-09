@@ -22,28 +22,28 @@ export class HttpClientService {
   //create karapu httpclient instance eka aran eken request yawanawa 
   //ena response eka ethanama format karanawa
 
-  username = 'ishan';
-  password = 'password';
+  // username = 'ishan';
+  // password = 'password';
 
 
 
   getEmp() {
-    const headers = new HttpHeaders({ Authorization: 'Basic ' + btoa(this.username + ':' + this.password) });
+    // const headers = new HttpHeaders({ Authorization: 'Basic ' + btoa(this.username + ':' + this.password) });
 
     console.log("test call");
-    return this.httpClient.get<Employee[]>('http://localhost:8080/emp/emp', { headers });
+    return this.httpClient.get<Employee[]>('http://localhost:8080/emp/emp');
 
   }
 
   public deleteEmp(employee) {
-    const headers = new HttpHeaders({ Authorization: 'Basic ' + btoa(this.username + ':' + this.password) });
+    //const headers = new HttpHeaders({ Authorization: 'Basic ' + btoa(this.username + ':' + this.password) });
 
-    return this.httpClient.delete<Employee>("http://localhost:8080/emp" + "/" + employee.empId, { headers });
+    return this.httpClient.delete<Employee>("http://localhost:8080/emp" + "/" + employee.empId);
   }
 
   public createEmp(employee) {
-    const headers = new HttpHeaders({ Authorization: 'Basic ' + btoa(this.username + ':' + this.password) });
+    // const headers = new HttpHeaders({ Authorization: 'Basic ' + btoa(this.username + ':' + this.password) });
 
-    return this.httpClient.post<Employee>("http://localhost:8080/emp", employee, { headers });
+    return this.httpClient.post<Employee>("http://localhost:8080/emp", employee);
   }
 }
