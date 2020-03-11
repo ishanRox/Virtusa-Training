@@ -13,6 +13,8 @@ import org.springframework.security.core.context.SecurityContextHolder;
 import org.springframework.security.crypto.password.PasswordEncoder;
 import org.springframework.stereotype.Service;
 
+import java.util.Optional;
+
 @Service
 public class AuthService {
 
@@ -50,5 +52,11 @@ public class AuthService {
     SecurityContextHolder.getContext().setAuthentication(authenticate);
 
     return jwtProvider.generateToken(authenticate);
+  }
+
+  public <User> Optional getCurrentUser() {
+
+    org.springframework.security.core.userdetails.User user=  (org.springframework.security.core.userdetails.User)SecurityContextHolder.getContext().getAuthentication().getPrincipal();
+return Optional.of(user);
   }
 }
