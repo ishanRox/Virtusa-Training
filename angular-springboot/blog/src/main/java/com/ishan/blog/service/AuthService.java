@@ -44,9 +44,11 @@ public class AuthService {
     return passwordEncoder.encode(password);
   }
 
-  public void login(LoginRequest loginRequest) {
+  public String login(LoginRequest loginRequest) {
     Authentication authenticate = authenticationManager.authenticate(new UsernamePasswordAuthenticationToken(loginRequest.getUsername(), loginRequest.getPassword()));
 
     SecurityContextHolder.getContext().setAuthentication(authenticate);
+
+    return jwtProvider.generateToken(authenticate);
   }
 }

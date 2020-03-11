@@ -1,10 +1,11 @@
 package com.ishan.blog.security;
 
-import com.ishan.blog.model.User;
 import io.jsonwebtoken.Jwts;
 import io.jsonwebtoken.SignatureAlgorithm;
 
+import io.jsonwebtoken.security.Keys;
 import org.springframework.security.core.Authentication;
+import org.springframework.security.core.userdetails.User;
 import org.springframework.stereotype.Service;
 
 
@@ -14,8 +15,8 @@ public String generateToken(Authentication authentication){
 
   User pUser=(User)authentication.getPrincipal();
 
- return Jwts.builder().setSubject(pUser.getUserName())
-         .signWith(SignatureAlgorithm.HS512
-         ).compact();
+ return Jwts.builder().setSubject(pUser.getUsername())
+         .signWith(Keys.secretKeyFor(SignatureAlgorithm.HS512
+         )).compact();
 }
 }
