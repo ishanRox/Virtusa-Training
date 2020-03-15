@@ -1,0 +1,44 @@
+<header>
+  <nav class="navbar navbar-expand-md navbar-dark bg-dark">
+    <div>
+      <a href="https://www.ishanrox.com" class="navbar-brand"
+        >PractiseQ AdminPanel</a
+      >
+    </div>
+
+    <ul class="navbar-nav">
+      <li>
+        <a
+          *ngIf="loginService.isUserLoggedIn()"
+          routerLink="/quections"
+          class="nav-link"
+          >View Quections</a
+        >
+      </li>
+      <li>
+        <a
+          *ngIf="loginService.isUserLoggedIn()"
+          routerLink="/addq"
+          class="nav-link"
+          >Add New Quections</a
+        >
+      </li>
+      <li>
+        <a
+          *ngIf="!loginService.isUserLoggedIn()"
+          routerLink="/login"
+          class="nav-link"
+          >Login</a
+        >
+      </li>
+      <li>
+        <a
+          *ngIf="loginService.isUserLoggedIn()"
+          routerLink="/logout"
+          class="nav-link"
+          >Logout</a
+        >
+      </li>
+    </ul>
+  </nav>
+</header>

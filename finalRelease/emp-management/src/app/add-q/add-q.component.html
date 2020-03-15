@@ -1,0 +1,81 @@
+<div class="col-md-6">
+  <h2 class="text-center">Add Quection</h2>
+  <form>
+    <div class="form-group">
+      <label for="subject">subject:</label>
+      <input
+        type="name"
+        [(ngModel)]="q.subject"
+        placeholder="Name"
+        name="subject"
+        class="form-control"
+        id="subject"
+      />
+    </div>
+    <div class="form-group">
+      <label for="subject">Topic:</label>
+      <input
+        type="name"
+        [(ngModel)]="q.topic"
+        placeholder="Name"
+        name="subject"
+        class="form-control"
+        id="subject"
+      />
+    </div>
+    <div class="form-group">
+      <label for="designation">addedBy:</label>
+      <input
+        [(ngModel)]="q.addedBy"
+        placeholder="Designation"
+        name="designation"
+        class="form-control"
+        id="designation"
+      />
+    </div>
+
+    <div class="form-group">
+      <label for="empId">addedDate</label>
+      <input
+        type="date"
+        [(ngModel)]="q.addedDate"
+        placeholder="Employee Id"
+        name="Employee Id"
+        class="form-control"
+        id="employeeid"
+      />
+    </div>
+
+    <div class="form-group">
+      <label for="empId">quectionString</label>
+      <input
+        rows="5"
+        [(ngModel)]="q.quectionString"
+        placeholder="quectionString"
+        name="quectionString"
+        class="form-control"
+        id="quectionString"
+      />
+    </div>
+
+    <div class="form-group">
+      <label for="exampleSelect1">Difficulty</label>
+      <select
+        class="form-control"
+        [(ngModel)]="q.difficulty"
+        placeholder="1"
+        name="difficulty"
+        class="form-control"
+        id="difficulty"
+      >
+        <option>1</option>
+        <option>2</option>
+        <option>3</option>
+        <option>4</option>
+        <option>5</option>
+      </select>
+    </div>
+    <div></div>
+    <button class="btn btn-success" (click)="createQ()">Create</button>
+  </form>
+</div>
