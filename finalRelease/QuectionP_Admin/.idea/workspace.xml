@@ -32,7 +32,7 @@
   </component>
   <component name="PropertiesComponent">
     <property name="RunOnceActivity.ShowReadmeOnStart" value="true" />
-    <property name="last_opened_file_path" value="$PROJECT_DIR$/../test" />
+    <property name="last_opened_file_path" value="$PROJECT_DIR$/../QAServer" />
     <property name="settings.editor.selected.configurable" value="preferences.externalResources" />
   </component>
   <component name="RecentsManager">
@@ -110,30 +110,34 @@
     <servers />
   </component>
   <component name="WindowStateProjectService">
-    <state x="488" y="49" key="#com.intellij.ide.util.MemberChooser" timestamp="1583866521892">
+    <state x="488" y="49" key="#com.intellij.ide.util.MemberChooser" timestamp="1584301549502">
       <screen x="0" y="0" width="1366" height="728" />
     </state>
-    <state x="488" y="49" key="#com.intellij.ide.util.MemberChooser/0.0.1366.728@0.0.1366.728" timestamp="1583866521892" />
-    <state x="463" y="120" key="FileChooserDialogImpl" timestamp="1584287937273">
+    <state x="488" y="49" key="#com.intellij.ide.util.MemberChooser/0.0.1366.728@0.0.1366.728" timestamp="1584301549502" />
+    <state x="413" y="112" key="#com.intellij.refactoring.typeMigration.ui.FailedConversionsDialog" timestamp="1584301043255">
       <screen x="0" y="0" width="1366" height="728" />
     </state>
-    <state x="463" y="120" key="FileChooserDialogImpl/0.0.1366.728@0.0.1366.728" timestamp="1584287937273" />
-    <state width="1323" height="228" key="GridCell.Tab.0.bottom" timestamp="1584294335133">
+    <state x="413" y="112" key="#com.intellij.refactoring.typeMigration.ui.FailedConversionsDialog/0.0.1366.728@0.0.1366.728" timestamp="1584301043255" />
+    <state x="463" y="120" key="FileChooserDialogImpl" timestamp="1584326468604">
       <screen x="0" y="0" width="1366" height="728" />
     </state>
-    <state width="1323" height="228" key="GridCell.Tab.0.bottom/0.0.1366.728@0.0.1366.728" timestamp="1584294335133" />
-    <state width="1323" height="228" key="GridCell.Tab.0.center" timestamp="1584294335132">
+    <state x="463" y="120" key="FileChooserDialogImpl/0.0.1366.728@0.0.1366.728" timestamp="1584326468604" />
+    <state width="1323" height="228" key="GridCell.Tab.0.bottom" timestamp="1584301822262">
       <screen x="0" y="0" width="1366" height="728" />
     </state>
-    <state width="1323" height="228" key="GridCell.Tab.0.center/0.0.1366.728@0.0.1366.728" timestamp="1584294335132" />
-    <state width="1323" height="228" key="GridCell.Tab.0.left" timestamp="1584294335130">
+    <state width="1323" height="228" key="GridCell.Tab.0.bottom/0.0.1366.728@0.0.1366.728" timestamp="1584301822262" />
+    <state width="1323" height="228" key="GridCell.Tab.0.center" timestamp="1584301822261">
       <screen x="0" y="0" width="1366" height="728" />
     </state>
-    <state width="1323" height="228" key="GridCell.Tab.0.left/0.0.1366.728@0.0.1366.728" timestamp="1584294335130" />
-    <state width="1323" height="228" key="GridCell.Tab.0.right" timestamp="1584294335132">
+    <state width="1323" height="228" key="GridCell.Tab.0.center/0.0.1366.728@0.0.1366.728" timestamp="1584301822261" />
+    <state width="1323" height="228" key="GridCell.Tab.0.left" timestamp="1584301822228">
       <screen x="0" y="0" width="1366" height="728" />
     </state>
-    <state width="1323" height="228" key="GridCell.Tab.0.right/0.0.1366.728@0.0.1366.728" timestamp="1584294335132" />
+    <state width="1323" height="228" key="GridCell.Tab.0.left/0.0.1366.728@0.0.1366.728" timestamp="1584301822228" />
+    <state width="1323" height="228" key="GridCell.Tab.0.right" timestamp="1584301822262">
+      <screen x="0" y="0" width="1366" height="728" />
+    </state>
+    <state width="1323" height="228" key="GridCell.Tab.0.right/0.0.1366.728@0.0.1366.728" timestamp="1584301822262" />
     <state x="213" y="20" key="Maven.ArtifactSearchDialog" timestamp="1583874333648">
       <screen x="0" y="0" width="1366" height="728" />
     </state>
