@@ -12,6 +12,7 @@ public class Answer {
   int id;
 
   String answerString;
+  boolean istrue;
 
   @ManyToOne
   @JoinColumn

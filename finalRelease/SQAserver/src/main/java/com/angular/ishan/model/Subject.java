@@ -12,7 +12,7 @@ public class Subject {
   String name;
   Integer noOfNotes;
 
-  @OneToMany(cascade = CascadeType.ALL, targetEntity = Quection.class, mappedBy = "subject")
+  @OneToMany(cascade = CascadeType.REMOVE, targetEntity = Quection.class, mappedBy = "subjectId")
   List<Quection> quectionList;
 
   public Subject(int id, String name, Integer noOfNotes, List<Quection> quectionList) {

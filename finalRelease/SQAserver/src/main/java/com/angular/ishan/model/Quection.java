@@ -12,7 +12,7 @@ public class Quection {
   int id;
   String title;
   String text;
-  String subjectId;
+  int subjectId;
   String lastModified;
 
   @OneToMany(cascade = CascadeType.ALL, targetEntity = Answer.class, mappedBy = "quection")
@@ -23,7 +23,7 @@ public class Quection {
   @JsonIgnore
   Subject subject;
 
-  public Quection(int id, String title, String text, String subjectId, String lastModified, List<Answer> answerList, Subject subject) {
+  public Quection(int id, String title, String text, int subjectId, String lastModified, List<Answer> answerList, Subject subject) {
     this.id = id;
     this.title = title;
     this.text = text;
@@ -33,6 +33,7 @@ public class Quection {
     this.subject = subject;
   }
 
+  public Quection(){}
   public Subject getSubject() {
     return subject;
   }
@@ -82,11 +83,11 @@ public class Quection {
     this.text = text;
   }
 
-  public String getSubjectId() {
+  public int getSubjectId() {
     return subjectId;
   }
 
-  public void setSubjectId(String subjectId) {
+  public void setSubjectId(int subjectId) {
     this.subjectId = subjectId;
   }
 }
