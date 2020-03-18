@@ -1,0 +1,133 @@
+https://www.baeldung.com/spring-request-param
+
+Remember, we don't need to annotate the 
+@RestController-annotated controllers with the @ResponseBody annotation since Spring does it by default.
+
+
+
+Let's say that we have an endpoint /api/foos that takes a query parameter called id:
+
+1
+2
+3
+4
+5
+@GetMapping("/api/foos")
+@ResponseBody
+public String getFoos(@RequestParam String id) {
+    return "ID: " + id;
+}
+In this example, we used @RequestParam to extract the id query parameter.
+
+A simple GET request would invoke getFoos:
+
+1
+2
+3
+http://localhost:8080/api/foos?id=abc
+----
+ID: abc
+
+
+
+
+
+
+
+In the previous example, both variable name and the parameter name are the same.
+
+Sometimes we want these to be different, though. Or, if we aren't using Spring Boot, we may need to do special compile-time configuration or the parameter names won't actually be in the bytecode.
+
+But what's nice is that we can configure the @RequestParam name using the name attribute:
+
+1
+2
+3
+4
+5
+@PostMapping("/api/foos")
+@ResponseBody
+public String addFoo(@RequestParam(name = "id") String fooId, @RequestParam String name) { 
+    return "ID: " + fooId + " Name: " + name;
+}
+We can also do @RequestParam(value = “id”) or just @RequestParam(“id”).
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+1
+2
+3
+4
+5
+@GetMapping("/api/foos")
+@ResponseBody
+public String getFoos(@RequestParam(required = false) String id) { 
+    return "ID: " + id;
+}
+In this case, both:
+
+1
+2
+3
+http://localhost:8080/api/foos?id=abc
+----
+ID: abc
+and
+
+1
+2
+3
+http://localhost:8080/api/foos
+----
+ID: null
+will correctly invoke the method.
+
+
+
+
+
+
+
+
+
+
+
+Alternatively, we can wrap the parameter in Optional:
+
+1
+2
+3
+4
+5
+@GetMapping("/api/foos")
+@ResponseBody
+public String getFoos(@RequestParam Optional<String> id){
+    return "ID: " + id.orElseGet(() -> "not provided");
+}
+In this case, we don't need to specify the required attribute.
+
+And the default value will be used if the request parameter is not provided:
+
+1
+2
+3
+http://localhost:8080/api/foos
+---- 
+ID: not provided
