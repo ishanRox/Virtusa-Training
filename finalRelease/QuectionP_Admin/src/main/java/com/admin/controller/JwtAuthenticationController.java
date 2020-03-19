@@ -11,6 +11,8 @@ import org.springframework.security.authentication.AuthenticationManager;
 import org.springframework.security.authentication.BadCredentialsException;
 import org.springframework.security.authentication.DisabledException;
 import org.springframework.security.authentication.UsernamePasswordAuthenticationToken;
+import org.springframework.security.core.Authentication;
+import org.springframework.security.core.context.SecurityContextHolder;
 import org.springframework.security.core.userdetails.UserDetails;
 import org.springframework.web.bind.annotation.*;
 
@@ -45,7 +47,12 @@ public class JwtAuthenticationController {
 		return ResponseEntity.ok(userDetailsService.save(user));
 	}
 
-	private void loggedUser(){}
+	@GetMapping("/user")
+	private Object loggedUser(){
+		Authentication authentication = SecurityContextHolder.getContext().getAuthentication();
+
+		return authentication.getDetails();
+	}
 
 	private void authenticate(String username, String password) throws Exception {
 		try {
