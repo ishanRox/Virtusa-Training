@@ -1,8 +1,6 @@
 package com.admin.service;
 
 
-import com.admin.model.Quection;
-
 import java.util.List;
 
 public interface QuectionService {

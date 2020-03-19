@@ -2,7 +2,6 @@ package com.admin.service;
 
 import java.util.List;
 
-import com.admin.model.Quection;
 import com.admin.repository.QRepository;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
