@@ -1,0 +1,10 @@
+This is  circuit breaker 
+_________________________________________________________________________________________________
+PROJECT===DiscoveryService, AllocaterService,EmployeeService 
+_________________________________________________________________________________________________
+1. First run discovery service.
+2. Then run Both AllocaterService and EmployeeService. 
+3. Save data to both of them and recive  allocations.
+4. Stop the AllocaterService .
+5. Send request to AllocaterService through EmployeeService http://localhost:8081/services/allocation/(id). 
+5. You can still get Allocation response even the AllocaterService service is down.

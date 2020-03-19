@@ -1,6 +1,5 @@
 package com.admin.controller;
 
-import com.admin.model.Answer;
 import com.admin.model.Employee;
 import com.admin.model.Quection;
 import com.admin.service.QuectionService;
@@ -78,28 +77,28 @@ public class Controller {
     return user;
   }
 
-
-  @RequestMapping(value = "test", method = RequestMethod.GET, produces = "application/json")
-  public List<Quection> test() {
-    Quection quection = new Quection();
-
-    quection.setAddedBy("sdfsfsf");
-    quection.setAddedDate("sdfsfsf");
-    quection.setDifficulty(3);
-    quection.setQuectionString("      sdfsfsf");
-    quection.setSubject("sdfsfsf");
-    quection.setTopic("sdfsfsf");
-
-    List<Quection> quections = new ArrayList<>();
-    List<Answer> answers = new ArrayList<>();
-    Answer answer = new Answer();
-    answer.setAnswerString("hello");
-
-    answers.add(answer);
-    quection.setAnswers(answers);
-    quections.add(quection);
-    return quections;
-  }
+//
+//  @RequestMapping(value = "test", method = RequestMethod.GET, produces = "application/json")
+//  public List<Quection> test() {
+//    Quection quection = new Quection();
+//
+//    quection.setAddedBy("sdfsfsf");
+//    quection.setAddedDate("sdfsfsf");
+//    quection.setDifficulty(3);
+//    quection.setQuectionString("      sdfsfsf");
+//    quection.setSubject("sdfsfsf");
+//    quection.setTopic("sdfsfsf");
+//
+//    List<Quection> quections = new ArrayList<>();
+//    List<Answer> answers = new ArrayList<>();
+//    Answer answer = new Answer();
+//    answer.setAnswerString("hello");
+//
+//    answers.add(answer);
+//    quection.setAnswers(answers);
+//    quections.add(quection);
+//    return quections;
+//  }
 //quection added
 
   @RequestMapping(value = "/save", method = RequestMethod.POST)

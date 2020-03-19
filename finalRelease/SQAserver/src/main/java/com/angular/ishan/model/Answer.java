@@ -10,9 +10,16 @@ public class Answer {
   @Id
   @GeneratedValue(strategy = GenerationType.IDENTITY)
   int id;
-
   String answerString;
   boolean istrue;
+
+  public boolean isIstrue() {
+    return istrue;
+  }
+
+  public void setIstrue(boolean istrue) {
+    this.istrue = istrue;
+  }
 
   @ManyToOne
   @JoinColumn

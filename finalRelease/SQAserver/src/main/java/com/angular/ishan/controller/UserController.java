@@ -6,11 +6,14 @@ import com.angular.ishan.repository.AnswerRepository;
 import com.angular.ishan.repository.QuectionRepository;
 import com.angular.ishan.service.SubjectService;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.security.core.Authentication;
+import org.springframework.security.core.context.SecurityContextHolder;
 import org.springframework.transaction.annotation.Transactional;
 import org.springframework.web.bind.annotation.*;
-
+import org.springframework.security.core.annotation.AuthenticationPrincipal;
 import java.util.ArrayList;
 import java.util.List;
+import java.util.Optional;
 import java.util.stream.Collectors;
 
 @RestController
@@ -79,9 +82,10 @@ public class UserController {
     quectionRepository.deleteById(id);
   }
 
-  @GetMapping("api/getPaper/")
-public List<Quection> getQuections(){
-
-return null;
-  }
+  @GetMapping("api/getpaper/")
+public List<Quection> getQuections(@RequestParam Optional<Integer> subjectid,@RequestParam Optional<String> title){
+    Authentication auth = SecurityContextHolder.getContext().getAuthentication();
+    System.out.println(auth.getDetails());
+    return  quectionRepository.findBySubjectIdAndTitle(subjectid.get(),title.get());
+    }
 }
