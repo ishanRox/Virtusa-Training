@@ -1,31 +1,32 @@
 package com.ishan.quection_scrape.controller
 
-import com.ishan.quection_scrape.model.Article
-import com.ishan.quection_scrape.repo.ArticleRepository
+import com.ishan.quection_scrape.model.Movie
+import com.ishan.quection_scrape.repo.MovieRepository
 import com.ishan.quection_scrape.service.ScrapeService
-import com.ishan.quection_scrape.service.ScrapeServiceImpl
-import org.springframework.beans.factory.annotation.Autowired
-import org.springframework.stereotype.Controller
-import org.springframework.ui.Model
-import org.springframework.ui.set
 import org.springframework.web.bind.annotation.*
 
 @RestController
-class HttpController(private val repo: ArticleRepository,private val scrapeService: ScrapeService
+class HttpController(private val repo: MovieRepository, private val scrapeService: ScrapeService
 ) {
 
     @GetMapping("/test/{id}")
-    fun test(@PathVariable id: String): Article = Article(1, "is of $id", "the kotlin and java")
+    fun test(@PathVariable id: String): Movie = Movie(1, "is of $id",
+            "the kotlin and java"
+            , "ishan"
+            , "vimulthi"
+            , "vihanga"
+            , "andage"
+            , "don")
 
     @GetMapping("/save")
-    fun saveArticle(@RequestBody article: Article): Article = repo.save(article)
+    fun saveMovie(@RequestBody Movie: Movie): Movie = repo.save(Movie)
 
     @GetMapping("all")
-    fun getAll(): List<Article> = repo.findAll()
+    fun getAll(): List<Movie> = repo.findAll()
 
     @GetMapping("scrape")
-    fun scrape():String{
-      return  scrapeService.extractData();
+    fun scrape() {
+        return scrapeService.extractData();
     }
 
 }
