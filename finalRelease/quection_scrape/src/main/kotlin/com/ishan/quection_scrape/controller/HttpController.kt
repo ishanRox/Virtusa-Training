@@ -25,7 +25,7 @@ class HttpController(private val repo: MovieRepository, private val scrapeServic
     fun getAll(): List<Movie> = repo.findAll()
 
     @GetMapping("scrape")
-    fun scrape() {
+    fun scrape():List<String> {
         return scrapeService.extractData();
     }
 

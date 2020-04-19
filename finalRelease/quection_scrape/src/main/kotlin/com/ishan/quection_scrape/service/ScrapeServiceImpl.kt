@@ -9,7 +9,7 @@ import kotlin.streams.toList
 
 @Service
 class ScrapeServiceImpl : ScrapeService {
-    override fun extractData() {
+    override fun extractData():List<String> {
 
         val doc = Jsoup.connect("https://en.wikipedia.org/wiki/List_of_films_with_a_100%25_rating_on_Rotten_Tomatoes").get()
         val select = doc.select(".wikitable:first-of-type tr td:first-of-type a")
@@ -17,7 +17,8 @@ class ScrapeServiceImpl : ScrapeService {
         val toList = select.map { it.attr("href") }
                 .parallelStream()
                 .filter { it != null }
-                .forEach{ (e,i)->{}}
+
+        return toList.toList()
 
     }
 
