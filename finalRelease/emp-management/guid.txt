@@ -1,0 +1,301 @@
+after ng new Quection
+
+ng install boostrap fontawsome --save
+
+npm install packages.... --save
+
+check package.json if these are added or not
+
+now go and add imports to styles.css
+ /* You can add global styles to this file, and also import other style files */
+@import "~bootstrap/dist/css/bootstrap.css";
+
+@import "~font-awesome/css/font-awesome.css";
+
+
+
+
+
+folder structure
+
+e2e2- end to end testing
+
+node modules- modules(not in git )
+
+src-what we write
+   app-default component
+   assest-images
+   faveicon-icon shown in browser
+   index.html-hosts default component <app-root>
+   main.ts-like main method
+   karma-unit tests
+   polyfills-make compatible with older browser
+   styles.css-add css and imports
+
+angular.json-globle js,scripts
+package.json- developers can get this from git and ng install dependencies
+
+
+   
+Angular Components
+
+-controle part of a screen
+-encapsulate view ,logic and styles
+-angular must have atleast 1 component (angular is a large component app-component)
+
+import { Component } from '@angular/core';
+
+// app root eka danawa index.html ekata angular ekenma
+@Component({
+//allow u to insert component into another component
+  selector: 'app-root',
+//provide html
+  templateUrl: './app.component.html',
+provide css
+  styleUrls: ['./app.component.css']
+})
+export class AppComponent {
+  title = 'Quections version 2.0';
+}
+
+
+create component and add it to the 
+ng generate component ...
+
+we must register components by adding to this
+
+@NgModule({
+  declarations: [
+    AppComponent,
+    NavigationComponent
+  ],
+
+
+
+
+Angular Routing
+
+in app.module.ts
+
+// make router Array and assign it to routes ,routers are hold by routes
+const appRoutes: Routes = [{
+  path: 'notes',
+  component: NotesComponent
+}];
+
+
+and import Router Module and our array to it
+
+ imports: [
+    BrowserModule,
+    AppRoutingModule,
+    RouterModule.forRoot(appRoutes)
+
+  ]
+
+
+got to main html and add router outlet
+
+<h1>hello im ishan {{ title }} from default component</h1>
+<router-outlet></router-outlet>
+
+if you want navigation use
+  <a class="nav-link" routerLink="/notes">Notes </a>
+
+enable tracing 
+  RouterModule.forRoot(appRoutes,{enableTracing: true})
+
+
+******
+const routes: Routes = [{
+  path: 'notes',
+  component: NotesComponent
+},
+  {
+    path: 'feedback',
+    component: FeedbackComponent
+  },
+
+  // default component
+  {
+    path: '',
+    component: NotesComponent
+  },
+  {
+    path: '**',
+    component: NotfoundComponent
+  }
+,
+  {
+    path: 'connect',
+    component: GitconnectComponent
+  }
+  ,
+];
+wada karanne na default ewa danna kalin danna oni
+
+
+
+
+
+Forms
+
+add import in module
+
+import {FormsModule} from '@angular/forms';
+
+
+and add to ngmodule imports
+
+
+@NgModule({
+  declarations: [
+    AppComponent,
+    NavigationComponent,
+    FeedbackComponent,
+    NotesComponent,
+    NotfoundComponent
+  ],
+  imports: [
+    BrowserModule
+    ,
+    AppRoutingModule
+    ,
+    RouterModule.forRoot(appRoutes, {enableTracing: true})
+    ,
+___________________________________
+    FormsModule
+___________________________________
+  ],
+  providers: [],
+  bootstrap: [AppComponent]
+})
+
+
+in needed component make the interface
+
+
+// for the form
+export interface FeedbackViewModel {
+name: string;
+email: string;
+feedback: string;
+}
+
+and make the model
+
+
+export class FeedbackComponent implements OnInit {
+
+  model: FeedbackViewModel = {
+ name: '',
+ email: '',
+ feedback: '',
+
+  };
+
+
+  sendFeedBack(): void {
+  alert(this.model.name);
+  }
+
+in html
+
+    <input type="text"
+                 id="name"
+                 class="form-control"
+                 name="name"
+                 placeholder="Your name"
+                 [(ngModel)]="model.name"
+                 #name="ngModel"
+              />
+
+and view it  using a form put inside a form
+
+ (submit)="sendFeedBack()"
+
+
+
+
+
+send data through http 
+
+router is not included default and Forms  are not included
+so we mst add it to module
+
+import {HttpClientModule} from '@angular/common/http';
+
+imports: [
+    BrowserModule
+    ,
+    AppRoutingModule
+    ,
+    RouterModule.forRoot(appRoutes, {enableTracing: true})
+    ,
+    FormsModule
+    ,
+    HttpClientModule
+  ],
+
+
+and go to the compnent method that send request and send post or get using 
+httpclient
+
+
+// feedback component eke thiyena form eken data yawanawa
+  sendFeedBack(): void {
+    alert(this.model.name);
+    const url = 'http://localhost:8080/api/feedback';
+    this.http.post(url, this.model).subscribe(res => {
+     // location.reload();
+    }, err => {
+      alert('An error has occured');
+    });
+  }
+
+
+
+
+
+HttpClient
+
+we already registered httpmodule in our app module class
+
+
+when we want to use that in our class 
+
+get it in constructor
+ constructor(private http: HttpClient) {
+  }
+
+initialize and use it
+
+// initialize
+  ngOnInit() {
+
+    this.getAllNoteBooks();
+  }
+
+  public getAllNoteBooks() {
+    const url = 'http://localhost:8080/api/all';
+    this.http.get<NoteBook[]>(url).subscribe(data => {
+        console.log(data);
+        this.noteBooks = data;
+      }
+      ,
+      error => {
+        alert(error);
+      });
+  }
+
+
+
+
+
+
+service
+
+service is singeleton
+
+
+

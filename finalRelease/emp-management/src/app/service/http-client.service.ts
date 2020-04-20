@@ -1,5 +1,5 @@
-import { Injectable } from "@angular/core";
-import { HttpClient, HttpHeaders } from "@angular/common/http";
+import { Injectable } from '@angular/core';
+import { HttpClient, HttpHeaders } from '@angular/common/http';
 
 export class Employee {
   constructor(
@@ -14,9 +14,10 @@ export class Employee {
 
 
 export class Quection {
-  id: number;
+  id: string;
+
   constructor(
-    id: number,
+    id: string,
     subject: string,
     addedBy: string,
     addedDate: string,
@@ -38,60 +39,61 @@ export class Answer {
 
   }
 }
+
 @Injectable({
-  providedIn: "root"
+  providedIn: 'root'
 })
 export class HttpClientService {
   constructor(private httpClient: HttpClient) {
   }
 
-  //create karapu httpclient instance eka aran eken request yawanawa 
-  //ena response eka ethanama format karanawa
+  // create karapu httpclient instance eka aran eken request yawanawa
+  // ena response eka ethanama format karanawa
 
   // username = 'ishan';
   // password = 'password';
 
-  //quection
+  // quection
   getQ() {
     // const headers = new HttpHeaders({ Authorization: 'Basic ' + btoa(this.username + ':' + this.password) });
 
-    console.log("test call for quections");
+    console.log('test call for quections');
 
-    return this.httpClient.get<Quection[]>('http://localhost:8080/emp/all');
+    return this.httpClient.get<Quection[]>('http://localhost:8084/emp/all');
 
   }
 
 
   public deleteQ(quection: Quection) {
-    //const headers = new HttpHeaders({ Authorization: 'Basic ' + btoa(this.username + ':' + this.password) });
+    // const headers = new HttpHeaders({ Authorization: 'Basic ' + btoa(this.username + ':' + this.password) });
 
-    return this.httpClient.delete<Quection>("http://localhost:8080/emp/delete" + "/" + quection.id);
+    return this.httpClient.delete<Quection>('http://localhost:8084/emp/delete' + '/' + quection.id);
   }
 
   public createQ(quection) {
     // const headers = new HttpHeaders({ Authorization: 'Basic ' + btoa(this.username + ':' + this.password) });
-    console.log("create quection");
+    console.log('create quection');
 
-    return this.httpClient.post<Quection>("http://localhost:8080/emp/save", quection);
+    return this.httpClient.post<Quection>('http://localhost:8084/emp/save', quection);
   }
 
   getEmp() {
     // const headers = new HttpHeaders({ Authorization: 'Basic ' + btoa(this.username + ':' + this.password) });
 
-    console.log("test call");
-    return this.httpClient.get<Employee[]>('http://localhost:8080/emp/emp');
+    console.log('test call');
+    return this.httpClient.get<Employee[]>('http://localhost:8084/emp/emp');
 
   }
 
   public deleteEmp(employee) {
-    //const headers = new HttpHeaders({ Authorization: 'Basic ' + btoa(this.username + ':' + this.password) });
+    // const headers = new HttpHeaders({ Authorization: 'Basic ' + btoa(this.username + ':' + this.password) });
 
-    return this.httpClient.delete<Employee>("http://localhost:8080/emp" + "/" + employee.empId);
+    return this.httpClient.delete<Employee>('http://localhost:8084/emp' + '/' + employee.empId);
   }
 
   public createEmp(employee) {
     // const headers = new HttpHeaders({ Authorization: 'Basic ' + btoa(this.username + ':' + this.password) });
 
-    return this.httpClient.post<Employee>("http://localhost:8080/emp", employee);
+    return this.httpClient.post<Employee>('http://localhost:8084/emp', employee);
   }
 }

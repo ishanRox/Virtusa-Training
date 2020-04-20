@@ -23,7 +23,7 @@ export class AddQComponent implements OnInit {
     }
   ];
 
-  q: Quection = new Quection(1, "", "", "", "", 1, this.ans, "");
+  q: Quection = new Quection("1", "", "", "", "", 1, this.ans, "");
   constructor(
     private httpClientService: HttpClientService
   ) { }

@@ -31,6 +31,15 @@ public class UserController {
     return all;
   }
 
+  @GetMapping("api/allQ")
+  List<Quection> getAllQuections() {
+    List<Quection> all = quectionRepository.findAll();
+    all.forEach(e->{
+      e.
+    });
+    return all;
+  }
+
   @PostMapping(value = "api/save")
   public Subject saveSubjects(@RequestBody Subject subject) {
     subjectService.saveSubject(subject);
