@@ -3,16 +3,11 @@
   <component name="ChangeListManager">
     <list default="true" id="eae7d1f2-4c92-4ac8-93d5-c56f34b7e378" name="Default Changelist" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/admin/controller/JwtAuthenticationController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/admin/controller/JwtAuthenticationController.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/com/admin/controller/JwtAuthenticationController.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/admin/controller/JwtAuthenticationController.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/META-INF/spring-boot-jwt.kotlin_module" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/../SQAserver/pom.xml" beforeDir="false" afterPath="$PROJECT_DIR$/../SQAserver/pom.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/../SQAserver/src/main/java/com/angular/ishan/IshanApplication.java" beforeDir="false" afterPath="$PROJECT_DIR$/../SQAserver/src/main/java/com/angular/ishan/IshanApplication.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../SQAserver/src/main/java/com/angular/ishan/config/JwtAuthenticationEntryPoint.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../SQAserver/src/main/java/com/angular/ishan/config/JwtRequestFilter.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../SQAserver/src/main/java/com/angular/ishan/config/JwtTokenUtil.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../SQAserver/src/main/java/com/angular/ishan/config/WebSecurityConfig.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../SQAserver/src/main/resources/application.properties" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/../SQAserver/src/main/resources/application.yml" beforeDir="false" afterPath="$PROJECT_DIR$/../SQAserver/src/main/resources/application.yml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../emp-management/src/app/service/http-client.service.ts" beforeDir="false" afterPath="$PROJECT_DIR$/../emp-management/src/app/service/http-client.service.ts" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -141,26 +136,26 @@
       <screen x="0" y="0" width="1366" height="728" />
     </state>
     <state x="413" y="112" key="#com.intellij.refactoring.typeMigration.ui.FailedConversionsDialog/0.0.1366.728@0.0.1366.728" timestamp="1584301043255" />
-    <state x="463" y="120" key="FileChooserDialogImpl" timestamp="1584638941888">
+    <state x="463" y="120" key="FileChooserDialogImpl" timestamp="1587337153297">
       <screen x="0" y="0" width="1366" height="728" />
     </state>
-    <state x="463" y="120" key="FileChooserDialogImpl/0.0.1366.728@0.0.1366.728" timestamp="1584638941888" />
-    <state width="1323" height="228" key="GridCell.Tab.0.bottom" timestamp="1584667650006">
+    <state x="463" y="120" key="FileChooserDialogImpl/0.0.1366.728@0.0.1366.728" timestamp="1587337153297" />
+    <state width="1323" height="228" key="GridCell.Tab.0.bottom" timestamp="1587359162129">
       <screen x="0" y="0" width="1366" height="728" />
     </state>
-    <state width="1323" height="228" key="GridCell.Tab.0.bottom/0.0.1366.728@0.0.1366.728" timestamp="1584667650006" />
-    <state width="1323" height="228" key="GridCell.Tab.0.center" timestamp="1584667650005">
+    <state width="1323" height="228" key="GridCell.Tab.0.bottom/0.0.1366.728@0.0.1366.728" timestamp="1587359162129" />
+    <state width="1323" height="228" key="GridCell.Tab.0.center" timestamp="1587359162129">
       <screen x="0" y="0" width="1366" height="728" />
     </state>
-    <state width="1323" height="228" key="GridCell.Tab.0.center/0.0.1366.728@0.0.1366.728" timestamp="1584667650005" />
-    <state width="1323" height="228" key="GridCell.Tab.0.left" timestamp="1584667650005">
+    <state width="1323" height="228" key="GridCell.Tab.0.center/0.0.1366.728@0.0.1366.728" timestamp="1587359162129" />
+    <state width="1323" height="228" key="GridCell.Tab.0.left" timestamp="1587359162128">
       <screen x="0" y="0" width="1366" height="728" />
     </state>
-    <state width="1323" height="228" key="GridCell.Tab.0.left/0.0.1366.728@0.0.1366.728" timestamp="1584667650005" />
-    <state width="1323" height="228" key="GridCell.Tab.0.right" timestamp="1584667650006">
+    <state width="1323" height="228" key="GridCell.Tab.0.left/0.0.1366.728@0.0.1366.728" timestamp="1587359162128" />
+    <state width="1323" height="228" key="GridCell.Tab.0.right" timestamp="1587359162129">
       <screen x="0" y="0" width="1366" height="728" />
     </state>
-    <state width="1323" height="228" key="GridCell.Tab.0.right/0.0.1366.728@0.0.1366.728" timestamp="1584667650006" />
+    <state width="1323" height="228" key="GridCell.Tab.0.right/0.0.1366.728@0.0.1366.728" timestamp="1587359162129" />
     <state x="213" y="20" key="Maven.ArtifactSearchDialog" timestamp="1583874333648">
       <screen x="0" y="0" width="1366" height="728" />
     </state>

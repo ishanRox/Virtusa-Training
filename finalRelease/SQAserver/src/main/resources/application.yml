@@ -10,11 +10,5 @@ spring:
         physical-strategy: org.hibernate.boot.model.naming.PhysicalNamingStrategyStandardImpl
       ddl-auto: update
 server:
-  port: 8085
-security:
-  oauth2:
-    resource:
-      token-info-uri: http://localhost:8080/authenticate
-    client:
-      client-id: i1
-      client-secret: ishan
+  port: 8084
+

@@ -14,6 +14,7 @@ export class Employee {
 
 
 export class Quection {
+  id: number;
   constructor(
     id: number,
     subject: string,
