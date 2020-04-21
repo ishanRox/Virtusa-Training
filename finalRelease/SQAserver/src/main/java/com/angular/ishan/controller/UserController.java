@@ -34,8 +34,18 @@ public class UserController {
   @GetMapping("api/allQ")
   List<Quection> getAllQuections() {
     List<Quection> all = quectionRepository.findAll();
+
+    return all;
+  }
+//subjects
+  @GetMapping("api/subjects")
+  List<Subject> getSubjects() {
+
+    List<Subject> all = subjectService.getAll();
+
     all.forEach(e->{
-      e.
+      System.out.println(e.getName());
+      e.getQuectionList().forEach(System.out::println);
     });
     return all;
   }
