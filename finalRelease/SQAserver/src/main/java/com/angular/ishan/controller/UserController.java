@@ -9,9 +9,8 @@ import org.springframework.beans.factory.annotation.Autowired;
 
 import org.springframework.transaction.annotation.Transactional;
 import org.springframework.web.bind.annotation.*;
-import java.util.ArrayList;
-import java.util.List;
-import java.util.Optional;
+
+import java.util.*;
 
 @RestController
 @CrossOrigin
@@ -39,15 +38,21 @@ public class UserController {
   }
 //subjects
   @GetMapping("api/subjects")
-  List<Subject> getSubjects() {
+  Map<String,String> getSubjects() {
 
     List<Subject> all = subjectService.getAll();
+    Map<String,String> map= new HashMap<>();
+
 
     all.forEach(e->{
       System.out.println(e.getName());
-      e.getQuectionList().forEach(System.out::println);
+      e.getQuectionList().forEach(x->
+              map.put(x.getTitle(),e.getName())
+
+
+      );
     });
-    return all;
+    return map;
   }
 
   @PostMapping(value = "api/save")
