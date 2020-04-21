@@ -11,6 +11,7 @@ import org.springframework.transaction.annotation.Transactional;
 import org.springframework.web.bind.annotation.*;
 
 import java.util.*;
+import java.util.stream.Collectors;
 
 @RestController
 @CrossOrigin
@@ -36,24 +37,41 @@ public class UserController {
 
     return all;
   }
-//subjects
+
+  //subjects
   @GetMapping("api/subjects")
-  Map<String,String> getSubjects() {
+  Map<String, String> getSubjects(@RequestParam String sub, @RequestParam String topic) {
 
-    List<Subject> all = subjectService.getAll();
-    Map<String,String> map= new HashMap<>();
-
-
-    all.forEach(e->{
-      System.out.println(e.getName());
-      e.getQuectionList().forEach(x->
-              map.put(x.getTitle(),e.getName())
+    System.out.println(sub + "   sdfdsfsf " + topic);
 
 
+    Map<String, String> map = new HashMap<>();
+    List<Subject> allSubjects = subjectService.getAll();
+    if (!sub.equals("")){
+      allSubjects=allSubjects.stream().filter(e -> e.getName().equals(sub)).collect(Collectors.toList());
+      allSubjects.forEach(e->{
+        System.out.println(e.getName());
+      });
+    }
+
+    System.out.println(allSubjects);
+    allSubjects.forEach(subTopic -> {
+
+      subTopic.getQuectionList().forEach(x -> {
+                if (!topic.equals("")) {
+                  System.out.println(x.getTitle()+" title "+topic);
+                  if (x.getTitle().equals(topic)) map.put(x.getTitle(), subTopic.getName());
+                }else{
+                  map.put(x.getTitle(), subTopic.getName());
+                }
+              }
       );
     });
     return map;
   }
+
+
+
 
   @PostMapping(value = "api/save")
   public Subject saveSubjects(@RequestBody Subject subject) {
@@ -104,8 +122,8 @@ public class UserController {
   }
 
   @GetMapping("api/getpaper/")
-public List<Quection> getQuections(@RequestParam Optional<Integer> subjectid,@RequestParam Optional<String> title){
+  public List<Quection> getQuections(@RequestParam Optional<Integer> subjectid, @RequestParam Optional<String> title) {
 
-    return  quectionRepository.findBySubjectIdAndTitle(subjectid.get(),title.get());
-    }
+    return quectionRepository.findBySubjectIdAndTitle(subjectid.get(), title.get());
+  }
 }
