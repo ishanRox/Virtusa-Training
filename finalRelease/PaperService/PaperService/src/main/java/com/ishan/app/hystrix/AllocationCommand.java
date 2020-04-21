@@ -27,25 +27,20 @@ public class AllocationCommand extends HystrixCommand<Quection[]> {
 	protected Quection[] run() throws Exception {
 		System.out.println("inside run");
 		HttpEntity<String> httpEntity = new HttpEntity<>("", httpHeaders);
-		System.out.println(subject+" "+title);
+		System.out.println(subject+" subject and title "+title);
 
 		ResponseEntity<Quection[]> responseEntity = restTemplate.exchange(
 							"http://allocater/api/getpaper/?subjectid="+subject+"&title="+title, HttpMethod.GET, httpEntity,
 							Quection[].class);
 
 		System.out.println("response entity");
-		System.out.println(responseEntity.getBody()[0].getText()+"response ");
+		System.out.println(responseEntity.getBody());
+
 		return responseEntity.getBody();
 	}
 
 	@Override
 	protected Quection[] getFallback() {
-// This is because we must return Allocation []
-// So we use one object array Trick to make method belive we return an array
-//		Allocation[] allocation = new Allocation[1];
-//		allocation[1].setProjectName("Server Down");
-//		allocation[1].setStartDate("2222");
-//		return allocation;
 		Quection[] quections = new Quection[5];
 		Quection quection = new Quection();
 		quection.setId(1);

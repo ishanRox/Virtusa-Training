@@ -23,6 +23,7 @@ public class EmployeeController {
 	@RequestMapping("/allocation")
 	public Quection[] getAllemployees(@RequestParam String subject,@RequestParam String title) {
 		Quection[] quections = quectionService.fetchQuections(subject,title);
+		System.out.println(quections);
 		return quections;
 	}
 
