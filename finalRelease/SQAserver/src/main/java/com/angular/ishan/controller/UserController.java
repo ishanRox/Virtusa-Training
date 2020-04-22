@@ -122,9 +122,15 @@ public class UserController {
   }
 
   @GetMapping("api/getpaper/")
-  public List<Quection> getQuections(@RequestParam Optional<Integer> subjectid, @RequestParam Optional<String> title) {
+  public List<Quection> getQuections(@RequestParam Optional<String> subjectid, @RequestParam Optional<String> title) {
     List<Quection> bySubjectIdAndTitle = quectionRepository.findAll();
-    System.out.println("subject id"+bySubjectIdAndTitle);
+
+    System.out.println(subjectid+"subject  topic"+title);
+
+    System.out.println(bySubjectIdAndTitle);
+bySubjectIdAndTitle.forEach(e->{
+  System.out.println(e.getSubject().getName());
+});
 
     return bySubjectIdAndTitle;
   }
