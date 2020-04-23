@@ -6,13 +6,10 @@ import org.springframework.context.annotation.Bean;
 import org.springframework.http.HttpEntity;
 import org.springframework.http.HttpHeaders;
 import org.springframework.stereotype.Service;
-import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.client.RestTemplate;
 
-import com.ishan.app.hystrix.AllocationCommand;
+import com.ishan.app.hystrix.PaperCommand;
 import com.ishan.app.model.Quection;
-
-import java.util.Arrays;
 
 @Service
 public class QuectionServiceImpl implements QuectionService {
@@ -43,7 +40,7 @@ public class QuectionServiceImpl implements QuectionService {
 	// Histrix code for fallBack
 	public Quection[] fetchAllocation(String subject,String title) {
 		System.out.println("in fetch allocaation");
-		AllocationCommand allocationCommand = new AllocationCommand(subject,title, httpHeaders, restTemplate);
+		PaperCommand allocationCommand = new PaperCommand(subject,title, httpHeaders, restTemplate);
 
 		return allocationCommand.execute();
 	}
@@ -76,28 +73,6 @@ public class QuectionServiceImpl implements QuectionService {
 
 
 		return javaBasics;
-//		Optional<List<Quection>> employee = employeeRepository.findById(id);
-//		System.out.println("Sending through emp 1");
-//		if (employee.isPresent()) {
-//
-//			System.out.println(employee.get().getName());
-//			Employee employee1 = employee.get();
-//// We comment out all the code for sending normal request
-//// Now we are sending it through our fetchAllocation method wich uses
-//// AllocationCommand
-//// So Even server is down we assign default object for it through fallBack Method
-////			ResponseEntity<Allocation[]> responseEntity = restTemplate.exchange(
-////					"http://allocater/services/getbyid/" + id, HttpMethod.GET, httpEntity, Allocation[].class);
-////			employee1.setAllocations(responseEntity.getBody());
-//
-//			employee1.setQuections(fetchAllocation(employee1));
-//
-//			return employee1;
-//		} else {
-//		Employee employee1= new Employee();
-//		employee1.setQuections(fetchAllocation(employee1));
-//		employee1.setName("sdfdasf");
-//			return employee1;
 
 
 		}

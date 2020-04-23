@@ -9,7 +9,22 @@ import kotlin.streams.toList
 
 @Service
 class ScrapeServiceImpl : ScrapeService {
-    override fun extractData():List<String> {
+    override fun extractData(): List<String> {
+
+
+            //1. Fetching the HTML from a given URL
+            Jsoup.connect("https://www.google.co.in/search?q=this+is+a+test").get().run {
+                //2. Parses and scrapes the HTML response
+                select("div.rc").forEachIndexed { index, element ->
+                    val titleAnchor = element.select("h3 a")
+                    val title = titleAnchor.text()
+                    val url = titleAnchor.attr("href")
+                    //3. Dumping Search Index, Title and URL on the stdout.
+                    println("$index. $title ($url)")
+                }
+            }
+
+
 
         val doc = Jsoup.connect("https://en.wikipedia.org/wiki/List_of_films_with_a_100%25_rating_on_Rotten_Tomatoes").get()
         val select = doc.select(".wikitable:first-of-type tr td:first-of-type a")
@@ -23,7 +38,6 @@ class ScrapeServiceImpl : ScrapeService {
     }
 
     fun extractMovies(url: String) {
-
 
         val doc = Jsoup.connect("https://en.wikipedia.org/$url").get()
         val select = doc.select(".wikitable:first-of-type tr td:first-of-type a")

@@ -47,9 +47,9 @@ public class UserController {
 
     Map<String, String> map = new HashMap<>();
     List<Subject> allSubjects = subjectService.getAll();
-    if (!sub.equals("")){
-      allSubjects=allSubjects.stream().filter(e -> e.getName().equals(sub)).collect(Collectors.toList());
-      allSubjects.forEach(e->{
+    if (!sub.equals("")) {
+      allSubjects = allSubjects.stream().filter(e -> e.getName().equals(sub)).collect(Collectors.toList());
+      allSubjects.forEach(e -> {
         System.out.println(e.getName());
       });
     }
@@ -59,9 +59,9 @@ public class UserController {
 
       subTopic.getQuectionList().forEach(x -> {
                 if (!topic.equals("")) {
-                  System.out.println(x.getTitle()+" title "+topic);
+                  System.out.println(x.getTitle() + " title " + topic);
                   if (x.getTitle().equals(topic)) map.put(x.getTitle(), subTopic.getName());
-                }else{
+                } else {
                   map.put(x.getTitle(), subTopic.getName());
                 }
               }
@@ -69,8 +69,6 @@ public class UserController {
     });
     return map;
   }
-
-
 
 
   @PostMapping(value = "api/save")
@@ -125,12 +123,21 @@ public class UserController {
   public List<Quection> getQuections(@RequestParam Optional<String> subjectid, @RequestParam Optional<String> title) {
     List<Quection> bySubjectIdAndTitle = quectionRepository.findAll();
 
-    System.out.println(subjectid+"subject  topic"+title);
+    System.out.println(subjectid.get() + "subject  topic" + title);
 
-    System.out.println(bySubjectIdAndTitle);
-bySubjectIdAndTitle.forEach(e->{
-  System.out.println(e.getSubject().getName());
-});
+    if (!subjectid.get().equals("")) {
+      bySubjectIdAndTitle = bySubjectIdAndTitle.stream().filter(e ->
+              subjectService.findById(e.getSubjectId()).getName().equals(subjectid.get())
+      ).collect(Collectors.toList());
+    }
+
+    if (!title.get().equals("")) {
+      bySubjectIdAndTitle = bySubjectIdAndTitle.stream().filter(e -> e.getTitle().equals(title.get())).collect(Collectors.toList());
+    }
+
+    bySubjectIdAndTitle.forEach(e -> {
+      System.out.println(subjectService.findById(e.getSubjectId()).getName());
+    });
 
     return bySubjectIdAndTitle;
   }

@@ -9,6 +9,18 @@ spring:
       naming:
         physical-strategy: org.hibernate.boot.model.naming.PhysicalNamingStrategyStandardImpl
       ddl-auto: create
-eureka:
-  instance:
-    instance-id: ${spring.cloud.client.hostname}:${spring.application.name}:${spring.application.instance_id:${random.value}}
+#
+## Disable Hystrix timeout globally (for all services)
+#hystrix.command.default.execution.timeout.enabled: false
+#
+## Disable Hystrix timeout for a single service
+#hystrix.command.<serviceName>.execution.timeout.enabled: false
+#
+## Increase the Hystrix timeout to 60s (globally)
+#hystrix.command.default.execution.isolation.thread.timeoutInMilliseconds: 2000
+#
+## Increase the Hystrix timeout to 60s (per service)
+#hystrix.command.<serviceName>.execution.isolation.thread.timeoutInMilliseconds: 2000
+##eureka:
+##  instance:
+##    instance-id: ${spring.cloud.client.hostname}:${spring.application.name}:${spring.application.instance_id:${random.value}}
