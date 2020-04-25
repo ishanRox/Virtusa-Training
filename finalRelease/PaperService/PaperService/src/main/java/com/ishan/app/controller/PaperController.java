@@ -19,7 +19,7 @@ public class PaperController {
 
 	
 	//CAll from employee server to allocation server and get data and parse it
-	@RequestMapping("/allocation")
+	@RequestMapping("/getpaper")
 	public Quection[] getAllemployees(@RequestParam String subject,@RequestParam String title) {
 		Quection[] quections = quectionService.fetchQuections(subject,title);
 		System.out.println(quections);

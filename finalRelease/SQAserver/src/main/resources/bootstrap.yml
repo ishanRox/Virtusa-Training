@@ -6,4 +6,4 @@ eureka:
     fetch-registry: true
 spring:
   application:
-    name: allocater
+    name: sqaserver

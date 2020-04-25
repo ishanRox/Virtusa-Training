@@ -1,7 +1,9 @@
 package com.quectionscraper.quectionscraper.model;
 
 import java.io.IOException;
+import java.util.ArrayList;
 import java.util.HashSet;
+import java.util.List;
 import java.util.Set;
 import java.util.regex.Matcher;
 import java.util.regex.Pattern;
@@ -31,9 +33,9 @@ public class GoogleCrawler {
 
   }
 
-  public Set<String> getDataFromGoogle(String query) {
+  public List<String> getDataFromGoogle(String query) {
 
-    Set<String> result = new HashSet<String>();
+    List<String> result = new ArrayList<>();
     String request = "https://www.google.com/search?q=" + query + "&num=20";
     System.out.println("Sending request..." + request);
 

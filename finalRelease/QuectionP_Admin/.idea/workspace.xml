@@ -2,22 +2,19 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="eae7d1f2-4c92-4ac8-93d5-c56f34b7e378" name="Default Changelist" comment="">
-      <change afterPath="$PROJECT_DIR$/../PaperService/PaperService/src/main/java/com/ishan/app/hystrix/PaperCommand.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../quectionscraper/src/main/java/com/quectionscraper/quectionscraper/controller/scraperController.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../quectionscraper/src/main/java/com/quectionscraper/quectionscraper/dto/Answer.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../quectionscraper/src/main/java/com/quectionscraper/quectionscraper/dto/Quection.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../quectionscraper/src/main/java/com/quectionscraper/quectionscraper/dto/Subject.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../quectionscraper/src/main/java/com/quectionscraper/quectionscraper/model/GoogleCrawler.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../quectionscraper/src/main/resources/bootstrap.yml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../PaperService/PaperService/src/main/java/com/ishan/app/controller/EmployeeController.java" beforeDir="false" afterPath="$PROJECT_DIR$/../PaperService/PaperService/src/main/java/com/ishan/app/controller/PaperController.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../PaperService/PaperService/src/main/java/com/ishan/app/hystrix/AllocationCommand.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../PaperService/PaperService/src/main/java/com/ishan/app/service/QuectionServiceImpl.java" beforeDir="false" afterPath="$PROJECT_DIR$/../PaperService/PaperService/src/main/java/com/ishan/app/service/QuectionServiceImpl.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../PaperService/PaperService/src/main/resources/application.yml" beforeDir="false" afterPath="$PROJECT_DIR$/../PaperService/PaperService/src/main/resources/application.yml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../PaperService/PaperService/src/main/resources/bootstrap.yml" beforeDir="false" afterPath="$PROJECT_DIR$/../PaperService/PaperService/src/main/resources/bootstrap.yml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../TheoryInCurfew/startingSet/TheoryDocker.docx" beforeDir="false" afterPath="$PROJECT_DIR$/../../TheoryInCurfew/startingSet/TheoryDocker.docx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../PaperService/PaperService/src/main/java/com/ishan/app/controller/PaperController.java" beforeDir="false" afterPath="$PROJECT_DIR$/../PaperService/PaperService/src/main/java/com/ishan/app/controller/PaperController.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../PaperService/PaperService/src/main/java/com/ishan/app/hystrix/PaperCommand.java" beforeDir="false" afterPath="$PROJECT_DIR$/../PaperService/PaperService/src/main/java/com/ishan/app/hystrix/PaperCommand.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/compiler.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/compiler.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/modules.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/modules.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/spring-boot-jwt.iml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/spring-boot-jwt-login.iml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/com/admin/service/JwtUserDetailsService.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/admin/service/JwtUserDetailsService.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/admin/SpringBootHelloWorldApplication.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/admin/login.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/com/admin/SpringBootHelloWorldApplication.class" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/../SQAserver/src/main/java/com/angular/ishan/controller/UserController.java" beforeDir="false" afterPath="$PROJECT_DIR$/../SQAserver/src/main/java/com/angular/ishan/controller/UserController.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../quection_scrape/src/main/kotlin/com/ishan/quection_scrape/service/ScrapeServiceImpl.kt" beforeDir="false" afterPath="$PROJECT_DIR$/../quection_scrape/src/main/kotlin/com/ishan/quection_scrape/service/ScrapeServiceImpl.kt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../SQAserver/src/main/resources/bootstrap.yml" beforeDir="false" afterPath="$PROJECT_DIR$/../SQAserver/src/main/resources/bootstrap.yml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../quectionscraper/src/main/java/com/quectionscraper/quectionscraper/controller/scraperController.java" beforeDir="false" afterPath="$PROJECT_DIR$/../quectionscraper/src/main/java/com/quectionscraper/quectionscraper/controller/scraperController.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../quectionscraper/src/main/java/com/quectionscraper/quectionscraper/model/GoogleCrawler.java" beforeDir="false" afterPath="$PROJECT_DIR$/../quectionscraper/src/main/java/com/quectionscraper/quectionscraper/model/GoogleCrawler.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -74,7 +71,7 @@
       <recent name="C:\Users\ishan\Desktop\spring-boot-jwt\src\main\resources" />
     </key>
   </component>
-  <component name="RunManager" selected="Application.SpringBootHelloWorldApplication">
+  <component name="RunManager" selected="Application.login">
     <configuration name="BlogApplication" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
       <option name="MAIN_CLASS_NAME" value="com.ishan.blog.BlogApplication" />
       <module name="blog" />
@@ -88,9 +85,9 @@
         <option name="Make" enabled="true" />
       </method>
     </configuration>
-    <configuration name="SpringBootHelloWorldApplication" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
-      <option name="MAIN_CLASS_NAME" value="com.admin.SpringBootHelloWorldApplication" />
-      <module name="spring-boot-jwt" />
+    <configuration name="login" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
+      <option name="MAIN_CLASS_NAME" value="com.admin.login" />
+      <module name="spring-boot-jwt-login" />
       <extension name="coverage">
         <pattern>
           <option name="PATTERN" value="com.admin.*" />
@@ -103,7 +100,7 @@
     </configuration>
     <recent_temporary>
       <list>
-        <item itemvalue="Application.SpringBootHelloWorldApplication" />
+        <item itemvalue="Application.login" />
         <item itemvalue="Application.BlogApplication" />
       </list>
     </recent_temporary>

@@ -33,13 +33,13 @@ public class PaperCommand extends HystrixCommand<Quection[]> {
   }
 
   @Override
-  protected Quection[] run() throws Exception {
+  protected Quection[] run()  {
     System.out.println("inside run");
     HttpEntity<String> httpEntity = new HttpEntity<>("", httpHeaders);
     System.out.println(subject + " subject and title " + title);
     //http://allocater/api/getpaper/?subjectid
     ResponseEntity<Quection[]> responseEntity = restTemplate.exchange(
-            "http://allocater/api/getpaper/?subjectid=" + subject + "&title=" + title, HttpMethod.GET, httpEntity,
+            "http://sqaserver/api/getp?subjectid=" + subject + "&title=" + title, HttpMethod.GET, httpEntity,
             Quection[].class);
 
     System.out.println("response entity in normal service call");

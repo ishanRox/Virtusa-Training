@@ -119,7 +119,7 @@ public class UserController {
     quectionRepository.deleteById(id);
   }
 
-  @GetMapping("api/getpaper/")
+  @GetMapping("api/getp")
   public List<Quection> getQuections(@RequestParam Optional<String> subjectid, @RequestParam Optional<String> title) {
     List<Quection> bySubjectIdAndTitle = quectionRepository.findAll();
 
