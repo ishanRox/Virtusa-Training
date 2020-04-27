@@ -22,6 +22,7 @@ public class QuectionServiceImpl implements QuectionService {
 	}
 
 	@Autowired
+	@LoadBalanced
 	RestTemplate restTemplate;
 	// Rest template
 
@@ -58,10 +59,10 @@ public class QuectionServiceImpl implements QuectionService {
 			quection.setText("from github");
 
 			Quection quection1= new Quection();
-			quection.setText("sfsafadfadfaf");
+			quection.setText("dummy data");
 
 			Quection quection2= new Quection();
-			quection.setText("sfsafadfadfaf");
+			quection.setText("dummy data");
 
 			Quection[] quections=new Quection[5];
 			quections[0]=quection;

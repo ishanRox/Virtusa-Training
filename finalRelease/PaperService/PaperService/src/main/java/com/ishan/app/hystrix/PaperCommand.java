@@ -33,18 +33,24 @@ public class PaperCommand extends HystrixCommand<Quection[]> {
   }
 
   @Override
-  protected Quection[] run()  {
+  protected Quection[] run() throws Exception{
+
     System.out.println("inside run");
     HttpEntity<String> httpEntity = new HttpEntity<>("", httpHeaders);
     System.out.println(subject + " subject and title " + title);
-    //http://allocater/api/getpaper/?subjectid
+    //Simple quection
     ResponseEntity<Quection[]> responseEntity = restTemplate.exchange(
             "http://sqaserver/api/getp?subjectid=" + subject + "&title=" + title, HttpMethod.GET, httpEntity,
             Quection[].class);
 
     System.out.println("response entity in normal service call");
     Quection[] quections = responseEntity.getBody();
+    quections = mixQandA(quections);
+    //  mixPost(quections);
+    return quections;
+  }
 
+  private Quection[] mixQandA(Quection[] quections) {
     //Mixing Quections
     List<Quection> listToMix = Arrays.asList(quections);
     Collections.shuffle(listToMix);
@@ -57,49 +63,50 @@ public class PaperCommand extends HystrixCommand<Quection[]> {
       Collections.shuffle(mixedAnswerList);
       quections[i].setAnswerList(mixedAnswerList);
     }
-
-    return responseEntity.getBody();
+    return quections;
   }
 
   @Override
   protected Quection[] getFallback() {
+    try {
 
 
-    HttpEntity<String> httpEntity = new HttpEntity<>("", httpHeaders);
-    System.out.println(subject + " subject and title fallback" + title);
+      HttpEntity<String> httpEntity = new HttpEntity<>("", httpHeaders);
+      System.out.println(subject + " subject and title fallback" + title);
 
-    ResponseEntity<Quection[]> responseEntity = restTemplate.exchange(
-            "http://scraper/api/getpaper?subjectid=" + subject + "&title=" + title, HttpMethod.GET, httpEntity,
-            Quection[].class);
+      ResponseEntity<Quection[]> responseEntity = restTemplate.exchange(
+              "http://scraper/api/getpaper?subjectid=" + subject + "&title=" + title, HttpMethod.GET, httpEntity,
+              Quection[].class);
 
-    System.out.println("response entity in fallback from webScraper");
-    Quection[] quections1 = responseEntity.getBody();
+      System.out.println("response entity in fallback from webScraper");
+      Quection[] quections1 = responseEntity.getBody();
 
-    System.out.println(quections1);
+      System.out.println(quections1);
+      return quections1;
+
+    } catch (Exception e) {
+      e.printStackTrace();
+    }
+    return null;
 
 
-    return quections1;
   }
 
+  private Quection[] mixPost(Quection[] quections) {
+    Quection[] mixedResult = null;
+    try {
+      final String uri = "http://localhost:8088/mix";
+      System.out.println("hereeeeeeee");
 
-  public void QuectionMixer(Quection[] quectionSet) {
-    System.out.println("before shuffle");
-    Arrays.stream(quectionSet).forEach(e ->
-            e.getAnswerList().forEach(x -> System.out.println(x.getQuection().getText())));
+      RestTemplate restTemplate = new RestTemplate();
+      mixedResult = restTemplate.postForObject(uri, quections, Quection[].class);
 
+      System.out.println(mixedResult);
 
-    Quection[] quectionMixAnswers = (Quection[]) Arrays.stream(quectionSet).map(e -> {
-      List<Answer> answerList = e.getAnswerList();
-      Collections.shuffle(answerList);
-      return answerList;
-    }).toArray();
-
-    System.out.println("after shuffle");
-    Arrays.stream(quectionMixAnswers).forEach(e ->
-            e.getAnswerList().forEach(x -> System.out.println(x.getQuection().getText())));
-
-    //Collections.shuffle();
+    } catch (Exception e) {
+      e.printStackTrace();
+    }
+    return mixedResult;
   }
-
 
 }
