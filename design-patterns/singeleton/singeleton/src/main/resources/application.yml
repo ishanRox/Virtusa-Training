@@ -1,0 +1,6 @@
+spring:
+  devtools:
+    restart:
+      poll-interval: 3000
+      quiet-period: 2999
+
