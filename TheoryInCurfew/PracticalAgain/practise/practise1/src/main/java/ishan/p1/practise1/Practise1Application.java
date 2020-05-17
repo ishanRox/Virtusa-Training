@@ -1,16 +1,13 @@
-package com.design.singeleton;
+package ishan.p1.practise1;
 
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
 
-import java.util.stream.IntStream;
-
 @SpringBootApplication
-public class SingeletonApplication {
+public class Practise1Application {
 
 	public static void main(String[] args) {
-		SpringApplication.run(SingeletonApplication.class, args);
-
+		SpringApplication.run(Practise1Application.class, args);
 	}
 
 }
