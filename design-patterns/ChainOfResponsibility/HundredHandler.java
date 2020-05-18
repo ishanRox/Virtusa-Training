@@ -1,4 +1,4 @@
-public class ThousandHandler implements MoneyHandler {
+public class HundredHandler implements MoneyHandler {
     private MoneyHandler nextHandler;
 
     @Override
@@ -9,12 +9,12 @@ public class ThousandHandler implements MoneyHandler {
 
     @Override
     public void handlerResponsibility(Money amount) {
-        if (amount.getCashAmount() >= 1000) {
-            System.out.println("here you have " + amount.getCashAmount() / 1000 + " thousand  ");
-            if (amount.getCashAmount() % 1000 != 0) {
+        if (amount.getCashAmount() >= 100) {
+            System.out.println("here you have " + amount.getCashAmount() / 100 + " one Hundred  notes");
+            if (amount.getCashAmount() % 100 != 0) {
                 // this handler did the work but still there some more to be done
-                //get the remainder after dividing by 1000 and set to this object
-                amount.setCashAmount(amount.getCashAmount() % 1000);
+                // get the remainder after dividing by 100 and set to this object
+                amount.setCashAmount(amount.getCashAmount() % 100);
                 this.nextHandler.handlerResponsibility(amount);
             }
         } else {
