@@ -170,4 +170,11 @@ const names = ['ishan', 'vimukthi', 'vihanga'];
 for (val of names.entries()) console.log(val);
 
 //so we desructure above val to get inner values
-for ([value,name] of names.entries()) console.log(`value ${value} name ${name}`);
+for ([value, name] of names.entries()) console.log(`value ${value} name ${name}`);
+
+
+//_______________________________________________________
+console.log("\n");
+//interfaces in js
+//primitives:boolean,number,string ,null,undefined
+//6th Symbol
