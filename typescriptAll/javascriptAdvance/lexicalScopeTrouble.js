@@ -139,7 +139,6 @@ let arrowExample = {
 arrowExample.arrowFun();
 
 
-//this really happen like this more clarity
 console.log("____________________________________________________");
 console.log(this);
 console.log();
@@ -148,4 +147,48 @@ let arrowExample1 = {
     name: "ishan",
 };
 
+//this really happen like this more clarity can get by this
+//so in here this is module in node and window in browser 
 arrowExample1.arrowFun = () => { console.log(this); };
+//__________________________________________________________________________________
+//this here is module 
+let arrowFun = () => { console.log(this); };
+
+let anotherOne = {
+    name: "another one",
+    arrowFun: arrowFun
+};
+
+//not like in regular methods caller dosent change or affect this in arrow funciton
+//only matters is how this inherited
+console.log("call for anotherOne object");
+anotherOne.arrowFun();
+
+console.log("____________________");
+//but this object can be cached like this
+let arrowDog = {
+    name: "arrow dog",
+    m: () => {
+        console.log(this);
+    },
+    m1() {
+        console.log(this);
+    },
+    m3() {
+        //in here this is arrowDog object so arrow function inherit this from 
+        //the place it created so in here this== arrowDog
+        let arrow = () => { console.log(this); };
+        arrow();
+    }
+};
+//caller dosent affect this  only the declaration in arrow function
+arrowDog.m();
+console.log("call for arrow func\n");
+//caller affect in regular functions
+arrowDog.m1();
+console.log("call for regular func\n");
+//arrow function inherit this from where it maked proof
+arrowDog.m3();
+console.log("call for arrow inside regular\n");
+//normal function wala this call karana kena (caller)
+//arrow wala this wenne arrow eka hadapu thana this(owner)(parent gen inherit wenwa)
