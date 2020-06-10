@@ -72,12 +72,15 @@
 
 // Just to mention that the C language does not allow nested functions nor dynamic scoping.
 
+
+//**************************************************** */
 //In normal Methods it matters who call this
 //wadagath wenne call karanne kawda kiyana eka
-
+//normal outer call walata default this eka global object eka (window if html)
+// except if the script is running in strict mode
+global.name = "main";
 let funfunction = function () {
-    console.log(this);
-
+    console.log(this.name);
 };
 
 let dog = {
@@ -91,5 +94,26 @@ let cat = {
 
 dog.funfunction();
 cat.funfunction();
+funfunction()
 //https://www.codementor.io/@dariogarciamoya/understanding--this--in-javascript-du1084lyn
 //https://www.codementor.io/@dariogarciamoya/understanding-this-in-javascript-with-arrow-functions-gcpjwfyuc
+
+//________________________________________________________________________________________________________________________________________________________________________
+
+//Arrow functions do not bind their own this, instead, 
+//they inherit the one from the parent scope, which is called "lexical scoping".
+
+
+// define a function
+//we used this in function and global in here because of this reason  :-)
+//https://stackoverflow.com/questions/43627622/what-is-the-global-object-in-nodejs
+
+
+
+const myFunction = () => {
+    console.log(global.name);
+};
+
+// call it
+myFunction();
+
