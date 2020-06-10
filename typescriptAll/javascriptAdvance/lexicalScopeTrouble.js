@@ -1,5 +1,12 @@
 
+//lexically scoping amma kiyanwa eyage phone eka genna kiyala 
+//mama isssella mage gawa balanawa
+//naththam desk eke
+//naththam ammage room eke... ohoma ohoma continue wenawa
 
+//dynamic scope kiyanne
+// amma kiyanawa desk eka uda thiyeana mage phone eka genna
+// kiyala caller thama kiyanne 
 
 //https://stackoverflow.com/questions/1047454/what-is-lexical-scope
 // I understand them through examples. :)
@@ -75,10 +82,12 @@
 
 //**************************************************** */
 //In normal Methods it matters who call this
+//(this and atguments are dynamically scoped other variables lexically scoped)
 //wadagath wenne call karanne kawda kiyana eka
 //normal outer call walata default this eka global object eka (window if html)
 // except if the script is running in strict mode
 global.name = "main";
+
 let funfunction = function () {
     console.log(this.name);
 };
@@ -99,7 +108,7 @@ funfunction()
 //https://www.codementor.io/@dariogarciamoya/understanding-this-in-javascript-with-arrow-functions-gcpjwfyuc
 
 //________________________________________________________________________________________________________________________________________________________________________
-
+console.log("_________________________");
 //Arrow functions do not bind their own this, instead, 
 //they inherit the one from the parent scope, which is called "lexical scoping".
 
@@ -108,12 +117,35 @@ funfunction()
 //we used this in function and global in here because of this reason  :-)
 //https://stackoverflow.com/questions/43627622/what-is-the-global-object-in-nodejs
 
+// Same result but not the same reason.
+//  With normal functions the scoped is bound to the global one by default,
+//   arrows functions,as I said before,
+//    do not have their own this but they inherit it from the parent scope
+//******Specialy in arrow funcitons all variables are lexically scoped ****** 
+
+//reason this gives window object in browser and module in node is its
+// inherited to arrow function from where it declared  .
+//in here this is module.exports object in node js
+module.exports.name = "module.exports object, not the global object";
 
 
-const myFunction = () => {
-    console.log(global.name);
+let arrowExample = {
+    name: "ishan",
+    arrowFun: () => {
+        console.log(this);
+    }
 };
 
-// call it
-myFunction();
+arrowExample.arrowFun();
 
+
+//this really happen like this more clarity
+console.log("____________________________________________________");
+console.log(this);
+console.log();
+
+let arrowExample1 = {
+    name: "ishan",
+};
+
+arrowExample1.arrowFun = () => { console.log(this); };
