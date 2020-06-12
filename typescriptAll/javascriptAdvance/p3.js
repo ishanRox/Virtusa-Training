@@ -1,6 +1,6 @@
 //object oriented with javascript the old way
 
-const Car = function () {
+const CarOld = function () {
     if (!(new.target)) {
         throw new Error('u stupid girl this is a class not a function !');
     }
@@ -9,8 +9,48 @@ const Car = function () {
 };
 
 console.log('step 1');
-new Car();
+new CarOld();
 console.log('step 2');
-Car();
+//Car();
 
+//New way with class syntax in es 6
+class Car {
+    constructor(year) {
+        this.year = year;
+        this.km = 0;
+    }
+    drive(dist) {
+        this.km += dist;
+    }
+}
+
+const car = new Car(2020);
+console.log(car);
+car.drive(10);
+console.log(car);
+
+console.log("______________________________________")
+//getters and setters and properties in javascript
+
+class A {
+    constructor() {
+        console.log("new object has made");
+        this.colorVal = 'green';
+    }
+    //setter (this setter getter names and variable name must differ)
+    set color(colorVal) {
+        this.colorVal = colorVal;
+    }
+    //getter remember no args if args added it will give errors
+    get color() {
+        return this.colorVal;
+    }
+}
+
+const obj1 = new A();
+console.log(obj1);
+obj1.color = 'red';
+console.log(obj1);
+console.log(obj1.color);  
+//_____________________________________________________________
 
