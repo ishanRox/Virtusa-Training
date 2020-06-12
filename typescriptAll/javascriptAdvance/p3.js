@@ -51,6 +51,22 @@ const obj1 = new A();
 console.log(obj1);
 obj1.color = 'red';
 console.log(obj1);
-console.log(obj1.color);  
+console.log(obj1.color);
+console.log("____________________________________________")
 //_____________________________________________________________
+//static methods 
+class Planet {
 
+    static info() {
+        console.log("info called");
+    }
+
+
+}
+//call static method
+Planet.info();
+//new Planet().info(); you cant do this objects cant call static methods
+//set static variable not in constructo 
+Planet.lightspeed = "dont know exactly";
+//get static var 
+console.log(Planet.lightspeed);
