@@ -143,8 +143,39 @@ const projectAfter4Years = {
 
 Object.setPrototypeOf(benchIshan, projectAfter4Years);
 checkWork(benchIshan)
+console.log("________________________________________");
 //prototyping wala gets deep sets shallow
 //minissu 3 dena saha rupiyal 100 example eka mathaka thiyaganna 
 //prototypal  inheritance eka wennne ehama
 
 
+//this is not java like class based ineritance 
+//but seems like it
+
+class pearson {
+    constructor(first, last) {
+        this.first = first;
+        this.last = last;
+    }
+
+    toString() {
+        return `${this.first} ${this.last}`
+    }
+}
+
+class CoolPearson extends pearson {
+
+    toString() {
+        return `${super.toString()} called super and receive`
+    }
+}
+//see in java if u make a custome constructor
+//you must call it in extended class
+//but no need for that in javascript 
+//its implicitly done by javascript
+const ishan = new CoolPearson('ishan', 'vimukthi');
+
+console.log(ishan.toString());
+//proof of prototyping
+console.log(Object.getPrototypeOf(ishan));
+console.log(Object.getPrototypeOf(Object.getPrototypeOf(ishan)));
