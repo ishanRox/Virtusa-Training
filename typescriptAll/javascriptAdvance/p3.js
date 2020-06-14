@@ -70,3 +70,81 @@ Planet.info();
 Planet.lightspeed = "dont know exactly";
 //get static var 
 console.log(Planet.lightspeed);
+//____________________________________________
+console.log("____________________");
+//like var args in java
+const classFactory = function (...properties) {
+
+    console.log(properties);
+
+    return class {
+        constructor(...values) {
+            console.log((values));
+
+            for (const [index, property] of properties.entries()) {
+                //properties array eken data aran
+                //entries widihata arrange karagannawa 
+                //object eke property walata names,properties  array eken gannawa
+                //ewata values tika values array eken gannawa
+                this[property] = values[index]
+            }
+        }
+    };
+}
+
+const Book = classFactory('title', 'pages');
+
+const Book1 = new Book('song of ice and fire', 2000);
+console.log("______________________________________");
+
+//class inheritance or prototypal inheritance
+//this is far away form java :-)
+//java c# ruby and python use class based inheritance
+//languages like javascript and lua use prototypical inheritance
+
+const benchIshan = { name: 'sam' };
+
+const checkWork = function (person) {
+    try {
+        person.work();
+    } catch (error) {
+        console.log("eeeeya bench eke thama");
+    }
+};
+
+//check if the pearson is working or not 
+
+checkWork(benchIshan);
+
+const projectGiven = {
+    work: function () {
+        console.log("working in spring boot ....");
+    }
+};
+
+//use prototyping 
+console.log("after 1 year ....");
+//in prototypal inheritance if member is not found in 
+//original one it goes into the prototype
+Object.setPrototypeOf(benchIshan, projectGiven)
+checkWork(benchIshan);
+console.log('after 4 years ');
+
+//And the best thing is you can dynamically change it
+//So class based inheritance is static inflexible
+//prototypal inheritance is dynamic so its flexible
+//it goes until it finds the requested resource
+//obj->prototype->prototype->prototype->prototype->null
+const projectAfter4Years = {
+    work: function () {
+        console.log("working as a techlead ");
+    }
+};
+
+Object.setPrototypeOf(benchIshan, projectAfter4Years);
+checkWork(benchIshan)
+//prototyping wala gets deep sets shallow
+//minissu 3 dena saha rupiyal 100 example eka mathaka thiyaganna 
+//prototypal  inheritance eka wennne ehama
+
+
