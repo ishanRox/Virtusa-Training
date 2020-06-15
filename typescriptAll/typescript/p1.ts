@@ -62,3 +62,36 @@ let alternateWay = (message as string).endsWith('n');
 console.log(`ends with n (alternate way) ${alternateWay} `);
 
 console.log("_____________________________");
+
+
+console.log("_____________________________");
+//inline custom annotations
+let draw1 = (x: number, y: number, z: number) => console.log(`draw1 method passing arguments \n x ${x} y ${y} z ${z}`);
+
+draw1(12, 23, 34);
+//but to reduce complexity we add a object and 
+//pass variables through that object
+//so then we add our expectation of structure of that object
+//this is called inline anotations 
+//if we dont add this any object can be added
+
+let draw2 = (point: { x: number, y: number, z: number }) => console.log(`draw2 method passing a object \n x ${point.x} y ${point.y} z ${point.z}`);
+
+draw2({ x: 23, y: 234, z: 234 });
+
+//but for complex objects we must use interfaces
+//for more cleaner approch and we can use it again and again
+//Allways use uppercase in interface
+interface Point {
+    x: number,
+    y: number,
+    z: number
+};
+
+
+let draw3 = (point: Point) => console.log(`draw3 method passing a object type safe by a interface \n x ${point.x} y ${point.y} z ${point.z}`);
+
+draw3({ x: 23, y: 234, z: 234 });
+
+
+console.log("_____________________________");
