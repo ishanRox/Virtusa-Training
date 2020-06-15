@@ -201,6 +201,7 @@ console.log("_____________________________");
 //this may be classes ,functions ,variables or objects
 
 let alien = new Alien(1000);
-console.log(`alien imported from p2 module ${alien}`);
+console.log(`alien imported from p2 module `);
+console.log(alien);
 
 console.log("_____________________________");
