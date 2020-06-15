@@ -90,8 +90,50 @@ interface Point {
 
 
 let draw3 = (point: Point) => console.log(`draw3 method passing a object type safe by a interface \n x ${point.x} y ${point.y} z ${point.z}`);
-
 draw3({ x: 23, y: 234, z: 234 });
 
+
+console.log("_____________________________");
+
+console.log("_____________________________");
+//so in oop yes u studies 3 years :-) 
+//always says about cohesion 
+//look up that function highly dependen on interface
+//we must make it one unit to make it one unit we use
+//classes classes classes
+//class===properties and methods that are highly related
+
+//in typescript we cant have implementations
+//but we can have implementations in classes
+
+class PointClass {
+    x: number;
+    y: number;
+
+    //so sad no multiple constructors in typescript
+    //but you have oprional
+    // *but remember if one is optional other must be optional tooo*
+    constructor(x?: number, y?: number) {
+        if (x != undefined && y != undefined) {
+            this.x = x;
+            this.y = y;
+        }
+    }
+
+    draw() {
+        console.log(`x is ${this.x}  y is ${this.y}`)
+    }
+
+}
+
+//make a object of the Point class
+//type is implictly added by typescript
+let point = new PointClass(122, 333);
+point.draw();
+
+let point1 = new PointClass();
+point1.x = 12;
+point1.y = 34;
+point1.draw();
 
 console.log("_____________________________");
