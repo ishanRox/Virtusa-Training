@@ -1,3 +1,5 @@
+import { Alien } from './p2';
+
 //different types in typescript
 
 let count = 5;
@@ -193,5 +195,12 @@ console.log(`B class x ${bObj.x} y ${bObj.Y}`);
 console.log("_____________________________");
 
 console.log("_____________________________");
-//modules
+//modules  are imported from files
+//import alien from top 
+//As this import it= import { Alien} from './p2';
+//this may be classes ,functions ,variables or objects
+
+let alien = new Alien(1000);
+console.log(`alien imported from p2 module ${alien}`);
+
 console.log("_____________________________");
