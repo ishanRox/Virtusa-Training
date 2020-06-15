@@ -137,3 +137,37 @@ point1.y = 34;
 point1.draw();
 
 console.log("_____________________________");
+
+
+console.log("_____________________________");
+//acces modifiers public, protected, private
+class A {
+    private x: number;
+    yVariable: number;
+
+    constructor(x?: number) {
+        if (x !== undefined) {
+            this.x = x;
+        }
+    }
+    set X(x: number) {
+        this.x = x;
+    }
+    get X() {
+        return this.x;
+    }
+}
+let obj1 = new A(12);
+obj1.X = 100;
+//default is private in javascript
+obj1.yVariable = 200;
+console.log(obj1.X);
+console.log(obj1.yVariable)
+//we can have same name getters and setters
+//but  we cant use same variable name
+// A function declaration does two things:
+
+//   1  It declares a new variable in the current scope (with the same name as the function). This is the same as var x.
+//   2 It creates a function and assigns it to that variable. This is the same as x = function x () { ... } except it is hoisted.
+
+console.log("_____________________________");
