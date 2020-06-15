@@ -170,4 +170,28 @@ console.log(obj1.yVariable)
 //   1  It declares a new variable in the current scope (with the same name as the function). This is the same as var x.
 //   2 It creates a function and assigns it to that variable. This is the same as x = function x () { ... } except it is hoisted.
 
+
+//fantastic feature in typescript no this this hell
+class B {
+    //we can use this approach to easily make variables
+    constructor(public x?: number, private y?: number) {
+
+    }
+    //if you are dealing with one value use property
+    //this is not a method called as object.Y
+    get Y(): number {
+
+        return (this.y) ? this.y : 0;
+    }
+}
+
+let bObj = new B(12, 122);
+console.log(`B class x ${bObj.x} y ${bObj.Y}`);
+
+;
+
+console.log("_____________________________");
+
+console.log("_____________________________");
+//modules
 console.log("_____________________________");
