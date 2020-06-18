@@ -13,6 +13,12 @@ public class simpleBuilder {
         A a2 = builder2.build();
         a2.total();
 
+        // Builder — constructs parts of the product and provides an interface for its
+        // retrieving
+        // Director — constructs an object using the Builder interface
+        // Product — represents the complex object under construction. This is a result
+        // of cooperation a concrete Director with a concrete Builder
+
         // look how similer this java implementation and our one
         // StringBuilder builder = new StringBuilder("Temp");
         // String data = builder.append(1)
@@ -26,7 +32,13 @@ public class simpleBuilder {
 }
 
 // Builder is a creational design pattern that lets you construct complex
-// objects step by step. The
+// objects step by step.
+
+// Class A thama Director
+/**
+ * Class presenting a Director (orcestrates the Builder to make an airplane
+ * instance)
+ */
 class A {
     private int x;
     private int y;
@@ -42,6 +54,7 @@ class A {
         System.out.println(x + y + z);
     }
 
+    // Builder class
     static class ABuilder {
         private int x;
         private int y;
