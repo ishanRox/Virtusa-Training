@@ -1,11 +1,27 @@
+
 /**
  * simpleBuilder
  */
 public class simpleBuilder {
 
     public static void main(String[] args) {
-        new A.ABuilder().addX(100).addY(200).addZ(300).build().total();
+        A.ABuilder builder1 = new A.ABuilder().addX(100).addY(200).addZ(300);
+        A a1 = builder1.build();
+        a1.total();
 
+        A.ABuilder builder2 = new A.ABuilder().addY(200).addZ(300);
+        A a2 = builder2.build();
+        a2.total();
+
+        // look how similer this java implementation and our one
+        // StringBuilder builder = new StringBuilder("Temp");
+        // String data = builder.append(1)
+        // .append(true)
+        // .append("friend")
+        // .toString();
+        // System.out.println(data);
+        // Output:
+        // Temp1truefriend
     }
 }
 
