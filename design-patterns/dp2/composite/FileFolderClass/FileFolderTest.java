@@ -2,6 +2,9 @@ import java.util.ArrayList;
 
 //https://refactoring.guru/design-patterns/composite/
 
+// The client code works with all the components via their base
+// interface. This way the client code can support simple leaf
+// components as well as complex composites.
 public class FileFolderTest {
 
     public static void main(String[] args) {
@@ -17,8 +20,8 @@ public class FileFolderTest {
 
         File movieFile = new File("sausage party", 4);
         folder.addFileOrFolder(movieFile);
-        System.out.println(folder.getSize()+" Folder");
-        System.out.println(folder1.getSize()+" Folder1");
+        System.out.println(folder.getSize() + " Folder");
+        System.out.println(folder1.getSize() + " Folder1");
     }
 }
 
