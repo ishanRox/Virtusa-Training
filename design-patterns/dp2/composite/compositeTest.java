@@ -70,7 +70,7 @@ class Employee {
                 System.out.println(employee);
                 employee.printTree();
             }
-            System.out.println("___________________________________over "+this.name);
+            System.out.println("___________________________________over " + this.name);
         } else {
             return;
         }
