@@ -7,6 +7,18 @@ public class FileFolderTest {
     public static void main(String[] args) {
         System.out.println("this pattern contain left , composite and component interface ");
 
+        Folder folder = new Folder("Movies");
+        File file = new File("Portal2", 20);
+        File file1 = new File("Assasin Creed", 20);
+        Folder folder1 = new Folder("Games");
+        folder1.addFileOrFolder(file);
+        folder1.addFileOrFolder(file1);
+        folder.addFileOrFolder(folder1);
+
+        File movieFile = new File("sausage party", 4);
+        folder.addFileOrFolder(movieFile);
+        System.out.println(folder.getSize()+" Folder");
+        System.out.println(folder1.getSize()+" Folder1");
     }
 }
 
@@ -15,8 +27,11 @@ public class FileFolderTest {
 // simple and complex objects of a composition..
 // In here this AbstractFileFolder common for both file and folder
 abstract class AbstractFileOrFolder {
+    // abstract class or interface ekata
+    // leaf ekei composite ekei common ewa danawa
     private String name;
-    private double size;
+    // protected double size; get size mehema thibboth call karana gane increment
+    // wenawa
 
     public AbstractFileOrFolder(String name) {
         this.name = name;
@@ -37,17 +52,48 @@ abstract class AbstractFileOrFolder {
 // have children. Composite objects usually delegate the actual
 // work to their children and then "sum up" the result.
 class Folder extends AbstractFileOrFolder {
-private ArrayList<AbstractFileOrFolder> abstractFileOrFolder;
+    private ArrayList<AbstractFileOrFolder> abstractFileOrFolder;
+
     public Folder(String name) {
         super(name);
-        // TODO Auto-generated constructor stub
+        abstractFileOrFolder = new ArrayList<>();
+    }
+
+    // Folder ekata size ekak na files wala size eka thama eyage size eka
+    @Override
+    public double getSize() {
+        double size = 0.0;
+        for (AbstractFileOrFolder abstractFileOrFolderItem : abstractFileOrFolder) {
+            System.out.println(abstractFileOrFolderItem.getName());
+            size += abstractFileOrFolderItem.getSize();
+        }
+        return size;
+    }
+
+    public void addFileOrFolder(AbstractFileOrFolder fileOrFolder) {
+        abstractFileOrFolder.add(fileOrFolder);
+    }
+
+    public void removeAbstractFileOrFolder(AbstractFileOrFolder fileOrFolder) {
+        abstractFileOrFolder.remove(abstractFileOrFolder);
+    }
+}
+
+// The leaf class represents end objects of a composition. A
+// leaf object can't have any sub-objects. Usually, it's leaf
+// objects that do the actual work, while composite objects only
+// delegate to their sub-components.
+class File extends AbstractFileOrFolder {
+    private double size;
+
+    File(String name, double size) {
+        super(name);
+        this.size = size;
     }
 
     @Override
     public double getSize() {
-        // TODO Auto-generated method stub
-        return 0;
+        return size;
     }
 
-    
 }
