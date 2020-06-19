@@ -16,16 +16,15 @@ class A {
         originator.setState("marry");
         careTacker.saveToHistory(originator);
 
-        System.out.println("Current State"+originator);
+        System.out.println("Current State" + originator);
         System.out.println();
-        //2 reverts because marry state also saved in stack and
-        //our logic to reverting is setting  poped memento (removed object)
-        //api ain karapu kenawa thama set karaganne
+        // 2 reverts because marry state also saved in stack and
+        // our logic to reverting is setting poped memento (removed object)
+        // api ain karapu kenawa thama set karaganne
         careTacker.revertStateOfOriginator(originator);
         careTacker.revertStateOfOriginator(originator);
-        System.out.println("After revert "+originator);
+        System.out.println("After revert " + originator);
     }
-
 
 }
 
@@ -39,7 +38,7 @@ class CareTacker {
         history.push(originator.save());
     }
 
-    //revert the state of given originator
+    // revert the state of given originator
     public void revertStateOfOriginator(Originator originator) {
         if (!history.empty())
             originator.revert(history.pop());
@@ -75,17 +74,17 @@ class Originator {
 
     @Override
     public String toString() {
-        return "Originator{" +
-                "state='" + state + '\'' +
-                '}';
+        return "Originator{" + "state='" + state + '\'' + '}';
     }
 
-
-    //________________________________________________________________________________________
+    // ________________________________________________________________________________________
 
     // only the Originator that can store and retrieve
     // state information from the Memento
-    // and this act as template for Originator
+    // and this act as template for Originator.
+    // template mean just a pojo with state
+    // we only need to save state so we dont need every method and implementation
+
     static class Memento {
         private String state;
 

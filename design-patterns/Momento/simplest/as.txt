@@ -1,0 +1,47 @@
+
+class CareTacker {
+    Stack<Originator.Memento> history = new Stack();
+
+    public void saveToHistory(Originator originator) {
+        history.push(originator.getMementoTosaveInCareTacker());
+    }
+
+    public void revertStateOfOriginatorWithLastHistory(Originator originator) {
+            originator.revert(history.pop());
+    }
+}
+class Originator {
+
+    private String state;
+
+    public String getState() {
+        return new String(this.state);
+    }
+    public void setState(String state) {
+        this.state = state;
+    }
+
+    public Memento getMementoTosaveInCareTacker() {
+        return new Memento(getState());
+    }
+    public void revertUsingMementoGivenByCareTacker(Memento memento) {
+        this.state = memento.getState();
+    }
+
+    @Override
+    public String toString() {
+        return "Originator{" + "state='" + state + '\'' + '}';
+    }
+
+    static class Memento {
+        private String state;
+        Memento(String state) {
+            this.state = state;
+        }
+        private String getState() {
+            return this.state;
+        }
+
+    }
+
+}
