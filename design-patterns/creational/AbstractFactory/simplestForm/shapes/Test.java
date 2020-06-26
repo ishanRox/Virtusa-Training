@@ -66,6 +66,7 @@ abstract class AbstractFactory {
     abstract Shape getShape(String shapeType);
 }
 
+// catogorize and make shapes into two factories
 class ShapeFactory extends AbstractFactory {
     @Override
     public Shape getShape(String shapeType) {
@@ -90,6 +91,7 @@ class RoundedShapeFactory extends AbstractFactory {
     }
 }
 
+// make factory producer to make factories
 class FactoryProducer {
     public static AbstractFactory getFactory(boolean rounded) {
         if (rounded) {
