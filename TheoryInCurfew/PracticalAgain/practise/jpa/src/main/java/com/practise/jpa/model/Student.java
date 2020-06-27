@@ -1,12 +1,12 @@
 package com.practise.jpa.model;
 
 import javax.persistence.Entity;
+import javax.persistence.Id;
 import javax.persistence.Table;
 
 @Entity
-@Table(name = "Stu")
 public class Student {
-
+    @Id
     private int id;
     private String lastName;
     private String firstName;
