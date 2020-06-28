@@ -6,4 +6,5 @@ public interface StudentService {
 
     Student save(Student student);
 
+    Student findById(int id);
 }
