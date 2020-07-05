@@ -12,9 +12,9 @@ public class BridgeTest {
 
         Shape circle = new Circle();
         Color red = new Red();
-
         circle.color = red;
         circle.info();
+
         Color blue = new Blue();
         circle.color = blue;
         circle.info();
@@ -29,24 +29,41 @@ abstract class Shape {
     Color color;
 
     public void info() {
-        System.out.print("shape is " + this.getClass().getSimpleName());
-        if (color != null)
-            System.out.println(" color is " + color.getClass().getSimpleName());
+        System.out.println(" color is " + color.getColor() + " shape is " + this.getShapeName());
     }
+
+    public abstract String getShapeName();
 }
 
 interface Color {
+    String getColor();
 }
 
 class Red implements Color {
+    public String getColor() {
+        return "red";
+    }
 }
 
 class Blue implements Color {
-
+    public String getColor() {
+        return "blue";
+    }
 }
 
 class Circle extends Shape {
+
+    @Override
+    public String getShapeName() {
+        return "Circle";
+    }
+
 }
 
 class Triangle extends Shape {
+
+    @Override
+    public String getShapeName() {
+        return "Triangle";
+    }
 }
