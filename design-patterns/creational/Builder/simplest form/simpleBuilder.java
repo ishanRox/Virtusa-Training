@@ -36,7 +36,7 @@ public class simpleBuilder {
 
 // Class A thama Director
 /**
- * Class presenting a Director (orcestrates the Builder to make an airplane
+ * Class presenting a Director (orcestrates the Builder to make an 
  * instance)
  */
 class A {
