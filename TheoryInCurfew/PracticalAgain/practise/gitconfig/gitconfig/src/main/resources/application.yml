@@ -6,3 +6,5 @@ spring:
       server:
         git:
           uri: https://github.com/ishanRox/spring-cloud-config-store
+          password: 123
+          username: root
