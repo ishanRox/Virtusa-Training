@@ -84,12 +84,7 @@ class Test
 		Expression lName = new TerminalExpression("vimukthi"); 
         Expression fnameOrlname = new OrExpression(fName, lName);	 
         
-        Expression n1 = new TerminalExpression("1"); 
-        Expression n2 = new TerminalExpression("2"); 
-        Expression n3 = new TerminalExpression("3"); 
-        Expression n4 = new TerminalExpression("4"); 
-        Expression complex=   new AndExpression(new OrExpression(n1,n2),new AndExpression(n3,n4) );
-        
+     
 
 		System.out.println(fullName.interpreter("nishi")); 
 		System.out.println(fullName.interpreter("baby")); 
@@ -100,6 +95,12 @@ class Test
         System.out.println(fnameOrlname.interpreter("vimukthi")); 
        
         System.out.println("____________");
+        Expression n1 = new TerminalExpression("1"); 
+        Expression n2 = new TerminalExpression("2"); 
+        Expression n3 = new TerminalExpression("3"); 
+        Expression n4 = new TerminalExpression("4"); 
+        Expression complex=   new AndExpression(new OrExpression(n1,n2),new AndExpression(n3,n4) );
+        
         System.out.println(complex.interpreter("134"));
         System.out.println(complex.interpreter("13"));
         System.out.println(complex.interpreter("342"));
