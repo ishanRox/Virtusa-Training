@@ -1,3 +1,16 @@
+// AbstractExpression (Expression): Declares an interpret() operation that all
+// nodes (terminal and nonterminal) in the AST overrides.
+// TerminalExpression (NumberExpression): Implements the interpret() operation
+// for terminal expressions.
+// NonterminalExpression (AdditionExpression, SubtractionExpression, and
+// MultiplicationExpression): Implementoperations the interpret() operation for
+// all nonterminal expressions.
+// Context (String): Contains information that is global to the interpreter. It
+// is this String expression with the Postfix notation that has to be
+// interpreted and parsed.
+// Client (ExpressionParser): Builds (or is provided) the AST assembled from
+// TerminalExpression and NonTerminalExpression. The Client invokes the
+// interpret() operation.
 // Expression interface used to 
 // check the interpreter. 
 interface Expression 
@@ -5,6 +18,7 @@ interface Expression
 	boolean interpreter(String con); 
 } 
 
+// meka tikak leaf eka wage interpreter lojic eka handle karanne eyta witharai
 // TerminalExpression class implementing 
 // the above interface. This interpreter 
 // just check if the data is same as the 
@@ -30,6 +44,8 @@ class TerminalExpression implements Expression
 		} 
 	} 
 } 
+
+//Me set ekama non terminal ewa mewala interpreter  eka eyage expression okkotama lojic eka denawa
 // OrExpression class implementing 
 // the above interface. This interpreter 
 // just returns the or condition of the 
@@ -76,25 +92,7 @@ class Test
 
 	public static void main(String[] args) 
 	{ 
-		Expression firstName = new TerminalExpression("nishi"); 
-		Expression lastName = new TerminalExpression("baby"); 
-		Expression fullName = new AndExpression(firstName, lastName); 
 		
-		Expression fName = new TerminalExpression("ishan"); 
-		Expression lName = new TerminalExpression("vimukthi"); 
-        Expression fnameOrlname = new OrExpression(fName, lName);	 
-        
-     
-
-		System.out.println(fullName.interpreter("nishi")); 
-		System.out.println(fullName.interpreter("baby")); 
-		System.out.println(fullName.interpreter("nishibaby")); 
-		
-		System.out.println(fnameOrlname.interpreter("ishan")); 
-		System.out.println(fnameOrlname.interpreter("rox")); 
-        System.out.println(fnameOrlname.interpreter("vimukthi")); 
-       
-        System.out.println("____________");
         Expression n1 = new TerminalExpression("1"); 
         Expression n2 = new TerminalExpression("2"); 
         Expression n3 = new TerminalExpression("3"); 
@@ -104,6 +102,8 @@ class Test
         System.out.println(complex.interpreter("134"));
         System.out.println(complex.interpreter("13"));
         System.out.println(complex.interpreter("342"));
+
+       
 
 	} 
 } 
