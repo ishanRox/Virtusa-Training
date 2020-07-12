@@ -103,7 +103,26 @@ class Test
         System.out.println(complex.interpreter("13"));
         System.out.println(complex.interpreter("342"));
 
-       
 
+        System.out.println("__________________");
+
+        //Make a job qualification lojic
+        Expression oLevel= new TerminalExpression("ol");
+        Expression aLevel= new TerminalExpression("al");
+        Expression bscLevel= new TerminalExpression("bsc");
+        Expression mscLevel= new TerminalExpression("msc");
+
+
+        Expression forClerk= new AndExpression(oLevel,aLevel);
+        Expression forSoftwareEngineer= new OrExpression(bscLevel,mscLevel);
+
+        System.out.println("for clerk ");
+        System.out.println("jon try 1 "+forClerk.interpreter("ol,al"));
+        System.out.println("jon try 2 "+forClerk.interpreter("ol"));
+
+        System.out.println("for software engineer");
+        System.out.println("jon try 3 "+forSoftwareEngineer.interpreter("ol,al"));
+        System.out.println("jon try 4 "+forSoftwareEngineer.interpreter("bsc"));
+        System.out.println("jon try 5 "+forSoftwareEngineer.interpreter("bsc,msc"));
 	} 
 } 
