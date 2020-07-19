@@ -1,5 +1,7 @@
 
 spring:
+  application:
+    name: membership
   datasource:
     url: jdbc:mysql://localhost:3306/rentCloud?createDatabaseIfNotExist=true
     username: root
