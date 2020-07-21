@@ -1,0 +1,16 @@
+server:
+  port: 8282
+spring:
+  security:
+    user:
+      name: ishan
+      password: ishan123
+      roles: ADMIN,USER
+security:
+  oauth2:
+    client:
+      client-id:
+      client-secret:
+      access-token-validity-seconds:
+      authorized-grant-types:
+      scope:
