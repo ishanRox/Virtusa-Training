@@ -58,18 +58,9 @@ public class Test {
         for (Element element : list) {
             total += element.accept(new X());
         }
-
+        new Object();
+        
         System.out.println(total);
     }
 
 }
-
-      
-            
-           
-
-    
-    
-        
-        
-    

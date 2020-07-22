@@ -53,7 +53,7 @@ class MobilePhone implements Elment {
         this.price = price;
     }
 
-    public String getModel() {
+        ic String getModel() {
         return model;
     }
 
@@ -170,7 +170,7 @@ public class Test {
         elments.add(m2);
         elments.add(l1);
         elments.add(c1);
-
+new Object();
         Shop shop = new Shop();
         double total = 0;
 
