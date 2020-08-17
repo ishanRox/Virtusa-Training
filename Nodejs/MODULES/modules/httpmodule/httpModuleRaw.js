@@ -4,7 +4,7 @@ const http = require('http');
 const server = http.createServer();
 //name of the event emitt when some request hit the server is connection 
 //dont memorize all in doc
-server.on('connection',(socket)=>console.log('new connection....'));
+server.on('connection', (socket) => console.log('new connection....')) ;
 
 server.listen(3000);
 
