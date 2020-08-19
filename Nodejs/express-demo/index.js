@@ -1,5 +1,7 @@
 const express = require('express');
 const app = express();
+//add middleware
+app.use(express.json());
 
 const courses = [...Array(10).keys()].map(e => { return { name: `course${e}`, id: e }; });
 
@@ -29,6 +31,18 @@ app.get(`/api/courses/:id`, (req, res) => {
 
     res.send(course);
 });
+
+//Post example
+app.post(`/api/courses`, (req, res) => {
+    const course = {
+        id: courses.length + 1,
+        name: req.body.name
+    };
+    courses.push(course)
+    res.send(course);
+});
+
+
 
 //Read enviroment variable using port
 const port = process.env.PORT || 3000;
