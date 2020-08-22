@@ -14,7 +14,8 @@ app.use(express.json());
 
 const courses = [...Array(10).keys()].map(e => { return { name: `course${e}`, id: e }; });
 console.log(courses);
-
+//972 6467 5996
+//346389
 //these are end points get post delete update
 app.get('/', (req, res) => {
     console.log('get request called');
@@ -47,7 +48,7 @@ app.post(`/api/courses`, (req, res) => {
     //If invalid ,return 400 - Bad request
     if (error) {
         //400 Bad request
-        res.status(400).send(result.error.details[0].message);
+        res.status(400).send(error.details[0].message);
         return;
     }
 
