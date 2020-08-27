@@ -66,3 +66,22 @@ elif age >= 16:
     print("go screw urself")
 else:
     print("u ra kid")
+
+print("________________________________")
+
+# with and
+size = 122
+
+if size < 5:
+    print("liliputtek")
+elif(size >= 5) and (size <= 8):
+    print("medium ok")
+elif(size > 8) and (size < 12):
+    print("large")
+else:
+    print("african")
+
+#ternary operator
+votingAge=18
+canVote="Yes u can vote to gota "if votingAge>20 else "no u cnt vote to gota"
+print(canVote)

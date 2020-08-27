@@ -42,13 +42,13 @@ fi
 # -f file true if the provided string is a file
 #-g file true if the froup id is set on a file
 
-FILE="test.txt"
+# FILE="test.txt"
 
-if [ -f "$FILE" ]; then
-    echo "$FILE is a file"
-else
-    echo "$FILE is not a file"
-fi
+# if [ -f "$FILE" ]; then
+#     echo "$FILE is a file"
+# else
+#     echo "$FILE is not a file"
+# fi
 
 #switch statements
 
@@ -106,12 +106,12 @@ done
 #     #rename the file (mv oldname newname)
 # done
 
-#read a file
-LINE=1
-while read -r CURRENT_LINE; do
-    echo "$LINE: $CURRENT_LINE"
-    ((LINE++))
-done <"./a.txt"
+# #read a file
+# LINE=1
+# while read -r CURRENT_LINE; do
+#     echo "$LINE: $CURRENT_LINE"
+#     ((LINE++))
+# done <"./a.txt"
 
 #Functions
 
@@ -135,3 +135,8 @@ touch "hello/ishan.txt"
 #write to that file
 echo "hello im ishan" >>"hello/ishan.txt"
 echo "created folder hello and file ishan"
+
+#get a random number
+for i in {1..10}; do
+    echo "this is a random value by \$RANDOM $((RANDOM % 10))-$((RANDOM % 10))"
+done
