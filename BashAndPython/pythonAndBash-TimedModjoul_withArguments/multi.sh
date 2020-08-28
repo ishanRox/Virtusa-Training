@@ -5,8 +5,8 @@ start=$(date +%s)
 
 #here specify the device count (times that needed to execute python script)
 
-hour=0
-minutes=5
+hour=2
+minutes=0
 
 #generate noOfRounds by hour or minute
 minutes=$((minutes + (hour * 60)))
@@ -25,8 +25,7 @@ bashArgument1=$1
 bashArgument2=$2
 bashArgument3=$3
 
-echo "$noOfRounds rounds of $waitingTimeSeconds second"
-echo "$minutes minutes"
+echo "amount of hours going to run - $hour hours"
 echo "Bash script initiated invoking python script"
 echo "runnning interval $waitingTimeSeconds seconds"
 echo "going to run for $minutes minutes in $noOfRounds rounds"
