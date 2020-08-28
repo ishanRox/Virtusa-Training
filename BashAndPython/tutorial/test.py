@@ -6,7 +6,8 @@ import time
 
 # simple output and input
 print("hello world by ishan")
-name = input("What is your name ")
+#name = input("What is your name ")
+name = "ishan"
 print("hi", name)
 
 # type in multi line
@@ -81,7 +82,11 @@ elif(size > 8) and (size < 12):
 else:
     print("african")
 
-#ternary operator
-votingAge=18
-canVote="Yes u can vote to gota "if votingAge>20 else "no u cnt vote to gota"
+# ternary operator
+votingAge = 18
+canVote = "Yes u can vote to gota "if votingAge > 20 else "no u cnt vote to gota"
 print(canVote)
+
+# escape sequence raw strings
+print("new line not ignored\n")
+print(r"new line  ignored\n")
