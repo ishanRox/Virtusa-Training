@@ -90,3 +90,11 @@ print(canVote)
 # escape sequence raw strings
 print("new line not ignored\n")
 print(r"new line  ignored\n")
+
+# substrings
+print("1st 3", "ishan"[0:3])
+# 1st para is inclusive last is exclusive
+print("every other", "ishan"[0:-4])
+# 3 rd arg say to skip it work like if skip val is 2 1234567 ==> 1357 and val is 3 147
+# for easyness think it skip skip val -1 time
+print("with skip", "123456789"[0:8:3])
