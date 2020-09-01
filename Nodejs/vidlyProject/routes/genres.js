@@ -1,30 +1,33 @@
 
-const express=require('express');
-const router= express.Router();
+const express = require('express');
+const router = express.Router();
 
-router.get('/vidly.com/api/genres', (req, res) => res.send(genres));
+const genres = ['sci sfi', 'crimde', 'love', 'adult', 'nolan legend'];
 
-router.post('/vidly.com/api/genres', (req, res) => {
+function validateGenres(genre) {
+    const schema = { name: joi.string().min(4).required() };
+    return joi.validate(genre, schema);
+}
+
+router.get('/', (req, res) => res.send(genres));
+
+router.post('/', (req, res) => {
     const { error } = validateGenres(req.body);
     if (error) return res.status(400).send(error.details[0].message);
-
     genres.push(req.body.name);
     res.send(genres[genres.length - 1]);
 });
 
-router.put('/vidly.com/api/genres/:id', (req, res) => {
+router.put('/:id', (req, res) => {
     let genre = genres[req.params.id];
-
     if (genre == undefined) return res.status(400).send('not found');
-
     const { error } = validateGenres(req.body);
     if (error) return res.status(400).send(error.details[0].message);
-
     genres.splice(req.params.id, 1, req.body.name);
     res.send(genres);
 });
 
-router.delete('/vidly.com/api/genres/:id', (req, res) => {
+router.delete('/:id', (req, res) => {
     let genre = genres[req.params.id];
     if (genre == undefined) return res.status(400).send('not found');
 
@@ -33,4 +36,4 @@ router.delete('/vidly.com/api/genres/:id', (req, res) => {
     res.send(genres);
 });;
 
-module.exports= router;
+module.exports = router;

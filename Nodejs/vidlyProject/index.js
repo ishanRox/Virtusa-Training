@@ -10,6 +10,10 @@ const app = express();
 //config
 const config = require('config');
 
+//use genres after restructure the file
+const gen = require('./routes/genres');
+app.use('/vidly.com/api/genres', gen);
+
 //debuggers
 const startupdebugger = require('debug')('app:startup');
 const databasedebugger = require('debug')('app:db');
@@ -46,47 +50,7 @@ if (app.get('env') === 'development') {
     console.log('not dev no morgan logging enabled');
 }
 
-const genres = ['sci sfi', 'crimde', 'love', 'adult', 'nolan legend'];
 
-
-
-function validateGenres(genre) {
-    const schema = { name: joi.string().min(4).required() };
-    return joi.validate(genre, schema);
-}
-
-
-
-app.get('/vidly.com/api/genres', (req, res) => res.send(genres));
-
-app.post('/vidly.com/api/genres', (req, res) => {
-    const { error } = validateGenres(req.body);
-    if (error) return res.status(400).send(error.details[0].message);
-
-    genres.push(req.body.name);
-    res.send(genres[genres.length - 1]);
-});
-
-app.put('/vidly.com/api/genres/:id', (req, res) => {
-    let genre = genres[req.params.id];
-
-    if (genre == undefined) return res.status(400).send('not found');
-
-    const { error } = validateGenres(req.body);
-    if (error) return res.status(400).send(error.details[0].message);
-
-    genres.splice(req.params.id, 1, req.body.name);
-    res.send(genres);
-});
-
-app.delete('/vidly.com/api/genres/:id', (req, res) => {
-    let genre = genres[req.params.id];
-    if (genre == undefined) return res.status(400).send('not found');
-
-
-    genres.splice(req.params.id, 1);
-    res.send(genres);
-});;
 
 
 app.listen(3000, _ => console.log('Listning on port....'));
