@@ -5,8 +5,8 @@ start=$(date +%s)
 
 #here specify the device count (times that needed to execute python script)
 
-hour=2
-minutes=0
+hour=0
+minutes=5
 
 #generate noOfRounds by hour or minute
 minutes=$((minutes + (hour * 60)))
@@ -34,6 +34,7 @@ for ((i = 1; i <= noOfRounds; i++)); do
     echo "Bash executed python script run  $i th time"
     sleep $waitingTimeSeconds
     python x.py $bashArgument1 $bashArgument2 $bashArgument3
+    wait
 done
 
 #end time and calculate total running time
