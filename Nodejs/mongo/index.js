@@ -4,7 +4,7 @@ mongoose.connect('mongodb://localhost/playground')
     .then(() => console.log('Connected to MongoDb'))
     .catch(e => console.error('Couldnt connect to mongo', e));
 
-//Create a schema (like a Table template or blueprint for make class object)
+//Create a schema (like a Table template or blueprint for make documents)
 const courseSchema = new mongoose.Schema(
     {
         name: String,
@@ -19,6 +19,7 @@ const courseSchema = new mongoose.Schema(
 //this  is like class object made from  above schema  template schema is the template for the 
 //Table(Collection) and  this object is the real instance of it
 //From this object we can create documents(rows) and we can query the all Course table(collection) documents(rows)
+//this is like class 
 const Course = mongoose.model('Course', courseSchema);
 
 //use async await to get data from async function that send data
@@ -60,8 +61,8 @@ async function getCourses() {
     .select({ name: 1, tags: 1 });
 
 }
-//createCourse();
-//getCourses();
+createCourse();
+getCourses();
 
 
 //crete fake data

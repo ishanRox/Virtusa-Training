@@ -1,3 +1,4 @@
+#!/usr/bin/env python3
 import random
 
 randNo=random.randint(1,10)
