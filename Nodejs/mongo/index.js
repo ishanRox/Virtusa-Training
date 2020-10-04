@@ -71,3 +71,28 @@ getCourses();
     console.log(e+1000);
     createCourse(`node${e}`, `ishan${e}`,e*1000);
 });
+
+
+
+function ds(keys, values, rereduce) {
+	if (rereduce) {
+		var result = {
+			topScore: values[0].topScore,
+			bottomScore: values[0].bottomScore,
+			sum: values[0].sum,
+			count: values[0].count
+		};
+		for (var i = 1, e = values.length; i < e; ++i) {
+			result.sum = result.sum + values[i].sum;
+			result.count = result.count + values[i].count;
+			if (result.topScore < values[i].topScore) {
+				result.topScore = values[i].topScore;
+			};
+			if (result.bottomScore > values[i].bottomScore) {
+				result.bottomScore = values[i].bottomScore;
+			};
+		};
+		result.mean = (result.sum / result.count);
+		log('rereduce keys:' + toJSON(keys) + ' values:' + toJSON(values) + ' result:' + toJSON(result));
+		return result;
+	}}
