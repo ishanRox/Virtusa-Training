@@ -43,12 +43,13 @@ async function getCourses() {
     const courses = await Course.find({}, { name: 1, author: 1 }).limit(4);
     console.log(courses);
     console.log('__________________________________________-');
-    //advance query
+    //advance query all functions
 
-    const courses1 = await Course.find({ author: 'ishan', isPublish: true })
-        .limit(2)
-        .sort({ name: 1 })
-        .select({ name: 1, tags: 1 });
+    const courses1 = await Course.find({ author: /.*/, isPublish: true },{name:1,author:1})
+        .limit(4)
+        .select("author")
+        
+        ;
     console.log(courses1);
     console.log('complex query________________________________________________');
     //comparison operator
@@ -56,7 +57,7 @@ async function getCourses() {
     //eq,ne,gt,gte,lt,lte,in,nin
 
     const courses2 = await Course.find({},{name:1,price:1})
-    .limit(5)
+    .limit(5).sort({price:-1})
     
     ;
     console.log(courses2)
