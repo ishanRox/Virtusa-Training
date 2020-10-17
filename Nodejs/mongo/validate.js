@@ -7,8 +7,8 @@ mongoose.connect('mongodb://localhost/playground')
 //Create a schema (like a Table template or blueprint for make documents)
 const courseSchema = new mongoose.Schema(
     {
-        name: String,
-        author: String,
+        name: { type: String, required: true },
+        author: { type: String, required: true },
         tags: [String],
         date: { type: Date, default: Date.now },
         isPublish: Boolean,
@@ -27,15 +27,19 @@ async function createCourse(courseName, author, price) {
 
     //real object (document - row ) that we made from the "Course" class  
     const course = new Course({
-        name: 'Angular.js course',
+
         author,
         tags: ['Angular', 'backend'],
         isPublish: true,
         price
     });
+    try {
+    await    Course.validate(course);
+        //        const result = await course.save();
+    } catch (error) {
+        console.log(`promise rejected ${error.message}`);
+    }
 
-    const result = await course.save();
-    console.log(result);
 }
 
- createCourse(`node123`, `ishan roxa`, 21000); 
+createCourse(`node123`, `ishan roxa`, 1000); 
