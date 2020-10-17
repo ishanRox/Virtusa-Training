@@ -12,7 +12,12 @@ const courseSchema = new mongoose.Schema(
         tags: [String],
         date: { type: Date, default: Date.now },
         isPublish: Boolean,
-        price: Number
+        price: {
+            type: Number,required:function() {
+                return this.isPublish;
+            }
+            
+        }
     }
 );
 
@@ -27,14 +32,15 @@ async function createCourse(courseName, author, price) {
 
     //real object (document - row ) that we made from the "Course" class  
     const course = new Course({
-
+       
         author,
         tags: ['Angular', 'backend'],
         isPublish: true,
-        price
+
     });
     try {
-    await    Course.validate(course);
+        await Course.validate(course);
+        console.log("ok valid");
         //        const result = await course.save();
     } catch (error) {
         console.log(`promise rejected ${error.message}`);
