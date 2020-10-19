@@ -18,10 +18,38 @@ const courseSchema = new mongoose.Schema(
         tags: {
             type: [String], required: true,
             validate: {
-                validator: function (v) {
-                    return v.length > 0;
+
+                validator: function (value) {
+
+                    // setTimeout(() => {
+                    //     //faking some async work
+                    //     const result = v && v.length > 0;
+                    //     // call the callback with a boolean to confirm
+                    //     //It has beenallback with a boolean to confirm
+
+                    // }, 1000);
+
+
+
+                    return new Promise((resolve, reject) => {
+                        // There are two ways for an promise-based async validator to fail:
+                        // 1) If the promise rejects, Mongoose assumes the validator failed with the given error.
+                        // 2) If the promise resolves to `false`, Mongoose assumes the validator failed and creates an error with the given `message`.
+                        //so important - we can check it when test case fails and it reject it goes to the 'new Error(msg)'
+                        //but if we give correct result and resolve(false) it gets the '  message: 'msg''
+
+                        setTimeout(() => {
+                            console.log('Getting HTTP validation...');
+                            const result = value && value.length > 0;
+                            if (result) {
+                                resolve();
+                            } else {
+                                reject(new Error('A course should have at least one tag.'));
+                            }
+                        }, 5000);
+                    });
                 },
-                message: 'A course should have at least one tag !'
+                message: 'Message - A course should have at least one tag !'
             }
         },
         isPublish: { type: Boolean, required: true, default: false },
@@ -43,7 +71,7 @@ async function createCourse(name, author, price) {
     //real object (document - row ) that we made from the "Course" class  
     const course = new Course({
         name, author,
-        tags: [],
+        tags: [''],
         isPublish: true,
         price
     });
