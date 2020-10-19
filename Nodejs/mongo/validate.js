@@ -13,7 +13,7 @@ mongoose.connect('mongodb://localhost/playground', {
 //Create a schema (like a Table template or blueprint for make documents)
 const courseSchema = new mongoose.Schema(
     {
-        name: { type: String, required: true, minlength: 5, maxlength: 10, match: /^[a-zA-Z]+$/ },
+        name: { type: String, required: true, minlength: 5, maxlength: 10, match: /^[a-zA-Z]+$/, uppercase: true, trim: true },
         author: { type: String, required: true },
         tags: {
             type: [String], required: true,
@@ -33,7 +33,7 @@ const courseSchema = new mongoose.Schema(
                             } else {
                                 reject(new Error('A course should have at least one tag.'));
                             }
-                        }, 5000);
+                        }, 1000);
                     });
                 },
                 message: 'Message - A course should have at least one tag !'
@@ -58,18 +58,20 @@ async function createCourse(name, author, price) {
     //real object (document - row ) that we made from the "Course" class  
     const course = new Course({
         name, author,
-        tags: [],
+        tags: ['react'],
         isPublish: true,
         price
     });
     try {
         const result = await course.validate();
         console.log("ok valid ");
-        //const result = await course.save();
+        await course.save();
     } catch (error) {
         console.log(`promise rejected ${error.message}`);
+
+
     }
 
 }
 
-createCourse(`ishan`, `ishan roxa`, 1); 
+createCourse(`    ishan vihanga`, `ishan roxa`, 1); 
