@@ -1,11 +1,22 @@
 
 
 const express = require('express');
-const joi = require('joi');
+
 const logger = require('./logger');
 const auth = require('./auth');
 const morgan = require('morgan');
 const app = express();
+const mongoose = require('mongoose');
+
+var bodyParser = require('body-parser');
+app.use(bodyParser.json());
+app.use(bodyParser.urlencoded({ extended: true }));
+
+//connect to mongo db
+console.log('connecting to mongo db');
+mongoose.connect('mongodb://localhost/vidly')
+    .then(() => console.log('connected to mongodb'))
+    .catch(err => console.log('could not connect to mongodb'));
 
 //config
 const config = require('config');
