@@ -1,1 +1,1 @@
-/vidly.com/api/genres
+/vidly.com/api/cus

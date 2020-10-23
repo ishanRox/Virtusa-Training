@@ -27,7 +27,7 @@ const gen = require('./routes/genres');
 app.use('/vidly.com/api/genres', gen);
 
 //use the customers route meka folder eke customer file eka
-const customers= require('./routes/customers');
+const customers = require('./routes/customers');
 //meka url eka
 app.use('/vidly.com/api/cus', customers);
 
