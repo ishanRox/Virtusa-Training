@@ -23,7 +23,13 @@ const config = require('config');
 
 //use genres after restructure the file
 const gen = require('./routes/genres');
+//me url ekata ena requests harola yawanawa uda require ekata
 app.use('/vidly.com/api/genres', gen);
+
+//use the customers route meka folder eke customer file eka
+const customers= require('./routes/customers');
+//meka url eka
+app.use('/vidly.com/api/cus', customers);
 
 //debuggers
 const startupdebugger = require('debug')('app:startup');
