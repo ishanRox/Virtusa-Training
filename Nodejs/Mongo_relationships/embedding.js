@@ -44,14 +44,15 @@ async function listAuthors() {
     console.log(authors);
 }
 async function updateAuthor(courseId) {
-
-    const course = await Course.findById(courseId);
-    //one downside is these sub documents cant be save on their own 
-    //only they can be saved in the contex of their parents
-    //but validations and all the other things can be done 
-    course.author.name = 'roxxxxxxxxxxxx';
-    course.save();
-    //we dont have course.author.save() because this is sub doc
+    const course = await Course.update({ _id: courseId }, {
+        $set: {
+            'author.name': 'isisisisisisisisi'
+        }
+    });
+    //in this aproach we dont need to edit it in memory and update it in database
+    //Like below 
+    // course.author.name = 'roxxxxxxxxxxxx';
+    // course.save();
 }
 // createCourse('Node course', new Author({
 //     name: 'ishan', bio: 'heloooo ', website: 'www.eefs.com'
