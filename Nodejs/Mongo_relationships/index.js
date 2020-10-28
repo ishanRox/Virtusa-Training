@@ -37,7 +37,7 @@ async function createCourse(name, author) {
 }
 
 async function listCourses() {
-    const courses = await Course.find().populate('author');
+    const courses = await Course.find().populate('author','name-_id');
     console.log(courses);
 }
 
@@ -49,5 +49,5 @@ async function listAuthors() {
 //createAuthor('ishan', 'my bio', 'www.ishanrox.com');
 //createCourse('Node course', '5f941b36a6a07917c0952292');
 
-listAuthors();
+//listAuthors();
 listCourses();
