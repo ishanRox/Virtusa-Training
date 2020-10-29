@@ -1,13 +1,8 @@
+createCourse('Node course', [
+//     new Author({ name: 'ishan', bio: 'heloooo ', website: 'www.eefs.com' }),
 
-const authorSchema = new mongoose.Schema({
-    name: String,
-    bio: String,
-    website: String
-});
+//     new Author({ name: 'nishan', bio: 'heloooo ', website: 'www.eefs.com' }),
 
-const Author = mongoose.model('Author', authorSchema);
-
-const Course = mongoose.model('Course', new mongoose.Schema({
-    name: String,
-    author: authorSchema
-}));
+//     new Author({ name: 'hishan', bio: 'heloooo ', website: 'www.eefs.com' })
+// ]
+// );

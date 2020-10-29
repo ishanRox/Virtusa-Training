@@ -45,11 +45,12 @@ async function listAuthors() {
 }
 async function updateAuthor(courseId) {
     const course = await Course.update({ _id: courseId }, {
-        $set: {
-            'author.name': 'isisisisisisisisi'
+        $unset: {
+            'author': ''
         }
     });
-    //in this aproach we dont need to edit it in memory and update it in database
+    //in this aproach we dont need to edit it in memory 
+    //And update it in database by save()
     //Like below 
     // course.author.name = 'roxxxxxxxxxxxx';
     // course.save();
