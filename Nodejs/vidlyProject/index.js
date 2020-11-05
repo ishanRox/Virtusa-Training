@@ -31,6 +31,12 @@ const customers = require('./routes/customers');
 //meka url eka
 app.use('/vidly.com/api/cus', customers);
 
+//use the movie route meka folder eke movies file eka
+const movie = require('./routes/movies');
+//meka url eka
+app.use('/vidly.com/api/movie', movie);
+
+
 //debuggers
 const startupdebugger = require('debug')('app:startup');
 const databasedebugger = require('debug')('app:db');
