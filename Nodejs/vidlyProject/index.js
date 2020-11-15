@@ -36,6 +36,11 @@ const movie = require('./routes/movies');
 //meka url eka
 app.use('/vidly.com/api/movie', movie);
 
+//use the movie route meka folder eke movies file eka
+const rental = require('./routes/rental');
+//meka url eka
+app.use('/vidly.com/api/rental', rental);
+
 
 //debuggers
 const startupdebugger = require('debug')('app:startup');

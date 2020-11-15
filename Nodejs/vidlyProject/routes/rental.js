@@ -3,6 +3,10 @@ const router = express.Router();
 const { Rental, validateRentals } = require('../models/rental');
 const { Movie } = require('../models/movie')
 const { Customer } = require('../models/customer');
+const Fawn = require('fawn');
+const mongoose = require('mongoose');
+
+Fawn.init(mongoose);
 
 router.get('/', async (req, res) => {
     console.log('in get all ');
@@ -19,6 +23,7 @@ router.post('/', async (req, res) => {
     if (!customer) return res.status(400).send('Invalid customer');
 
     const movie = await Movie.findById(req.body.movieId);
+    console.log(movie);
     if (!movie) return res.status(400).send('Invalid movie');
 
     if (movie.numberInStock === 0) return res.status(400).send('Movie not in stock');
@@ -30,7 +35,7 @@ router.post('/', async (req, res) => {
             phone: customer.phone
         },
         movie: {
-            _id: movie.id,
+            _id: movie._id,
             title: movie.title,
             dailyRentalRate: movie.dailyRentalRate
         }
@@ -39,11 +44,29 @@ router.post('/', async (req, res) => {
     );
     //we have 2 seperate operations if something goes wronge 
     // one can happen and miss the other
-    rental = await rental.save();
-    movie.numberInStock--;
-    movie.save();
+    //thats where we need a transaction(they all complete or not)
+    //no transactions in 
 
-    res.send(rental);
+    //so when using fawn we make a task object
+    //not save these things in normal way
+    //but we do these thing s as Fawn tasks
+    // rental = await rental.save();
+    // movie.numberInStock--;
+    // movie.save();
+
+    try {
+        new Fawn.Task()
+            .save('rentals', rental)
+            .update('movies', { _id: movie._id },
+                { $inc: { numberInStock: -1 } })
+            .run();
+        console.log(rental);
+        res.send(rental);
+    } catch (error) {
+        error.status(500).send('Something failed.');
+
+    }
+
 });
 
 router.put('/:id', async (req, res) => {
