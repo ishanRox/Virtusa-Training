@@ -37,6 +37,8 @@ router.post('/', async (req, res) => {
     }
 
     );
+    //we have 2 seperate operations if something goes wronge 
+    // one can happen and miss the other
     rental = await rental.save();
     movie.numberInStock--;
     movie.save();
