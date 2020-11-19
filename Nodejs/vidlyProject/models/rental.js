@@ -1,6 +1,6 @@
 const mongoose = require('mongoose');
 const joi = require('joi');
-
+joi.objectId = require('joi-objectid')(joi);
 
 const Rental = new mongoose.model('Rental',
     new mongoose.Schema(
@@ -62,11 +62,16 @@ const Rental = new mongoose.model('Rental',
     )
 );
 
-
+//we add use npm validate object id joi package
 function validateRentals(rental) {
     const schema = {
-        customerId: joi.string().required(),
-        movieId: joi.string().required()
+        //we comment this because we use object id validation not just string
+        // customerId: joi.string().required(),
+        // movieId: joi.string().required()
+
+         customerId: joi.objectId().required(),
+         movieId: joi.objectId().required()
+
     };
     return joi.validate(rental, schema);
 }

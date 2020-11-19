@@ -1,7 +1,8 @@
 
+const joi = require('joi');
+joi.objectId = require('joi-objectid')(joi);
 
 const express = require('express');
-
 const logger = require('./logger');
 const auth = require('./auth');
 const morgan = require('morgan');
@@ -77,7 +78,6 @@ if (app.get('env') === 'development') {
 } else {
     console.log('not dev no morgan logging enabled');
 }
-
 
 
 

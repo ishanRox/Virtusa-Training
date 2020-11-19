@@ -24,7 +24,7 @@ router.post('/', async (req, res) => {
     //and we cant track versioning changes
 
     console.log(req.body);
-    let movie = new Movie({
+    const movie = new Movie({
         title: req.body.title,
         genre: {
             _id: genre._id,
@@ -33,7 +33,12 @@ router.post('/', async (req, res) => {
         numberInStock: req.body.numberInStock,
         dailyRentalRate: req.body.dailyRentalRate
     });
-    movie = await movie.save();
+
+    //meka special mehema save karala db eken id eka enakam balan inna ona na 
+    // mokada uda eken thama (mongoose nd mongodb driver) eken thama api id eka hadanne
+    //so db ekata save wela ena id eka ganna one na
+    //    movie = await movie.save();
+     await movie.save();
     res.send(movie);
 });
 

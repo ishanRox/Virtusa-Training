@@ -5,7 +5,7 @@ const { Movie } = require('../models/movie')
 const { Customer } = require('../models/customer');
 const Fawn = require('fawn');
 const mongoose = require('mongoose');
-
+//2 phase commit library eka
 Fawn.init(mongoose);
 
 router.get('/', async (req, res) => {
@@ -19,6 +19,14 @@ router.post('/', async (req, res) => {
     const { error } = validateRentals(req.body);
     if (error) return res.status(400).send(error.details[0].message);
 
+    //we check if its valid id and then find it
+    //but this is bad implementation we should do this in our validate 
+    //method
+
+    // if (!mongoose.Types.ObjectId.isValid(req.body.customerId)) {
+    //     return res.status(400).send('Invalid customer id');
+    // }
+    //this is the exception throws and its not handled
     const customer = await Customer.findById(req.body.customerId);
     if (!customer) return res.status(400).send('Invalid customer');
 
