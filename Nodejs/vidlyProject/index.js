@@ -42,6 +42,9 @@ const rental = require('./routes/rental');
 //meka url eka
 app.use('/vidly.com/api/rental', rental);
 
+//use the users route
+const user = require('./routes/users');
+app.use('/vidly.com/api/user', user);
 
 //debuggers
 const startupdebugger = require('debug')('app:startup');

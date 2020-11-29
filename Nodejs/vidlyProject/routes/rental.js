@@ -23,9 +23,9 @@ router.post('/', async (req, res) => {
     //but this is bad implementation we should do this in our validate 
     //method
 
-    // if (!mongoose.Types.ObjectId.isValid(req.body.customerId)) {
-    //     return res.status(400).send('Invalid customer id');
-    // }
+    if (!mongoose.Types.ObjectId.isValid(req.body.customerId)) {
+        return res.status(400).send('Invalid customer id');
+    }
     //this is the exception throws and its not handled
     const customer = await Customer.findById(req.body.customerId);
     if (!customer) return res.status(400).send('Invalid customer');

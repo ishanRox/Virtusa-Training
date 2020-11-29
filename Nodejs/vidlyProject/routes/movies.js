@@ -38,7 +38,7 @@ router.post('/', async (req, res) => {
     // mokada uda eken thama (mongoose nd mongodb driver) eken thama api id eka hadanne
     //so db ekata save wela ena id eka ganna one na
     //    movie = await movie.save();
-     await movie.save();
+    await movie.save();
     res.send(movie);
 });
 
