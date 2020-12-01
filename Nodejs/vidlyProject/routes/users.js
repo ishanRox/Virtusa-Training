@@ -4,6 +4,8 @@ const { User, validateUser } = require('../models/user');
 //lodash utility
 const _ = require('lodash');
 
+const bcrypt = require('bcrypt');
+
 router.post('/', async (req, res) => {
     const { error } = validateUser(req.body);
     if (error) return res.status(400).send(error.details[0].message);
@@ -13,6 +15,8 @@ router.post('/', async (req, res) => {
     if (user) {
         return res.status(400).send('user already registerd .');
     }
+
+
     // user = new User({
     //     name: req.body.name,
     //     email: req.body.email,
@@ -23,6 +27,10 @@ router.post('/', async (req, res) => {
     //used destructuring insted of lodash
     const { name, email, password } = req.body;
     user = new User({ name, email, password });
+
+    //make the hashed passwordwith salt and assign it to the user object
+    const salt = await bcrypt.genSalt(10);
+    user.password = await bcrypt.hash(user.password, salt);
 
     await user.save();
 

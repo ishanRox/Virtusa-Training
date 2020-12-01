@@ -4,7 +4,6 @@ joi.objectId = require('joi-objectid')(joi);
 
 const express = require('express');
 const logger = require('./logger');
-const auth = require('./auth');
 const morgan = require('morgan');
 const app = express();
 const mongoose = require('mongoose');
@@ -45,6 +44,11 @@ app.use('/vidly.com/api/rental', rental);
 //use the users route
 const user = require('./routes/users');
 app.use('/vidly.com/api/user', user);
+
+
+//use the users route
+const auth = require('./routes/auth');
+app.use('/vidly.com/api/auth', auth);
 
 //debuggers
 const startupdebugger = require('debug')('app:startup');
