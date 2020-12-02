@@ -8,6 +8,13 @@ const morgan = require('morgan');
 const app = express();
 const mongoose = require('mongoose');
 
+const config = require('config');
+if (!config.get('jwtPrivateKey')) {
+    console.error('Fatal Error jwt private key not defined !');
+    process.exit(1);
+}
+
+
 var bodyParser = require('body-parser');
 app.use(bodyParser.json());
 app.use(bodyParser.urlencoded({ extended: true }));
@@ -18,8 +25,8 @@ mongoose.connect('mongodb://localhost/vidly')
     .then(() => console.log('connected to mongodb'))
     .catch(err => console.log('could not connect to mongodb'));
 
-//config
-const config = require('config');
+// //config
+// const config = require('config');
 
 //use genres after restructure the file
 const gen = require('./routes/genres');
