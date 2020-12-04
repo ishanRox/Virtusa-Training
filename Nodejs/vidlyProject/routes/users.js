@@ -43,9 +43,13 @@ router.post('/', async (req, res) => {
     //res.send(_.pick(user, ['_id', 'name', 'email']));
     const { _id } = user;
 
-    const token = jwt.sign({
-        _id: user._id
-    }, config.get('jwtPrivateKey'));
+
+    // const token = jwt.sign({
+    //     _id: user._id
+    // }, config.get('jwtPrivateKey'));
+    // old way no clean code 
+    // new way
+    const token = user.generateAuth();
 
     // so in here returning jwt as a property is not good
     //Its more clear when its delivered in header
