@@ -4,6 +4,11 @@ const { User, validateUser } = require('../models/user');
 //lodash utility
 const _ = require('lodash');
 
+//for jwt and get config
+const jwt = require('jsonwebtoken');
+const config = require('config');
+
+//bcrypt encrypt and decrypt
 const bcrypt = require('bcrypt');
 
 router.post('/', async (req, res) => {
@@ -37,7 +42,14 @@ router.post('/', async (req, res) => {
     //used destructuring insted of lodash
     //res.send(_.pick(user, ['_id', 'name', 'email']));
     const { _id } = user;
-    res.send({ _id, name, email });
+
+    const token = jwt.sign({
+        _id: user._id
+    }, config.get('jwtPrivateKey'));
+
+    // so in here returning jwt as a property is not good
+    //Its more clear when its delivered in header
+    res.header('x-auth-token', token).send({ _id, name, email });
 
 });
 
